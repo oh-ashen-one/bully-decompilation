@@ -63,3 +63,12 @@ side-effect description, boundary cases, uncertainty, and a discriminating test.
 Record actual model/weights, settings, time, prompt hash, tool version, failures
 and qualified context classes. Model confidence is not evidence. Do not claim a
 clean-room process merely because two models are involved.
+
+## Read-only runtime location follow-up
+
+CrossOver 26.3 / 26.3.0.39832 is installed in `~/Applications/CrossOver.app`;
+its code signature passed outside the restricted inspection context. The existing
+Steam bottle records the same version and `win10_64`. No launch or runtime setup
+was performed. See [ISOLATED_RUNTIME_PROPOSAL.md](ISOLATED_RUNTIME_PROPOSAL.md) for
+the proposed 16 GiB additional fresh environment and 120-second menu observation.
+The optional source-assisted 7B pilot is not qualified decompilation capability.

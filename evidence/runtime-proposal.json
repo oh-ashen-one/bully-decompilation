@@ -1,0 +1,143 @@
+{
+  "inspection_only": true,
+  "runtime_app": {
+    "path": "~/Applications/CrossOver.app",
+    "identifier": "com.codeweavers.CrossOver",
+    "version": "26.3",
+    "build": "26.3.0.39832",
+    "executable": "CrossOver"
+  },
+  "runtime_launch_wrapper": "~/Applications/CrossOver.app/Contents/SharedSupport/CrossOver/bin/wine",
+  "macos": {
+    "version": "27.0.1",
+    "build": "26A434"
+  },
+  "bottle": {
+    "winearch": "win64",
+    "version": "26.3.0.39832",
+    "template": "win10_64"
+  },
+  "signature": {
+    "restricted_check_exit": 1,
+    "restricted_error": "invalid signature (code or signature have been modified); arm64",
+    "unrestricted_check_exit": 0,
+    "command": "codesign --verify --deep --strict",
+    "conclusion": "Unrestricted verification passed; restricted failure retained; no signature changes."
+  },
+  "rosetta_runtime_files_present": true,
+  "rosetta_execution_tested": false,
+  "wine_loader_architecture": "x86_64",
+  "native_wineserver_architecture": "x86_64",
+  "game_size": {
+    "regular_files": 3836,
+    "logical_bytes": 5329415078,
+    "allocated_bytes": 5337583616,
+    "symlinks_not_followed": 0
+  },
+  "whole_bottle_size_metadata_only": {
+    "regular_files": 16266,
+    "logical_bytes": 9540374360,
+    "allocated_bytes": 9578033152,
+    "symlinks_not_followed": 12
+  },
+  "production_documents_points_outside_bottle": true,
+  "production_host_home_drive_mapping_present": true,
+  "game_recipe_installers": [
+    {
+      "relative_path": "DirectX/DXSETUP.exe",
+      "bytes": 528392
+    },
+    {
+      "relative_path": "VCRedist/vcredist_x86.exe",
+      "bytes": 2723264
+    }
+  ],
+  "existing_dependency_metadata": [
+    {
+      "location": "system32",
+      "filename": "d3dx9_38.dll",
+      "bytes": 4991496,
+      "sha256": "b54e832bd8d7e94772c680f49c31b86f9c5db456f8e5cac66720d533896f1cfe",
+      "pe_machine": "0x8664"
+    },
+    {
+      "location": "system32",
+      "filename": "vcomp.dll",
+      "bytes": 46672,
+      "sha256": "c47df60c4fa4b68149e5e1ef37a1673fb6ac280d1c688bbb18d77e1a946d31bd",
+      "pe_machine": "0x8664"
+    },
+    {
+      "location": "system32",
+      "filename": "xinput1_3.dll",
+      "bytes": 107368,
+      "sha256": "756cad002e1553cfa1a91ebe8c1b9380ffabe0b4b1916c4a4db802396ddfbef8",
+      "pe_machine": "0x8664"
+    },
+    {
+      "location": "syswow64",
+      "filename": "d3dx9_38.dll",
+      "bytes": 3850760,
+      "sha256": "743e77a228e7d75442263ad70051e44534f7972c6326fd34b505a9c2c245894b",
+      "pe_machine": "0x14c"
+    },
+    {
+      "location": "syswow64",
+      "filename": "vcomp.dll",
+      "bytes": 48720,
+      "sha256": "f18e9d922c9608db4ec680e55fa3c4c97759abc44062230dcd81870fd184c1f3",
+      "pe_machine": "0x14c"
+    },
+    {
+      "location": "syswow64",
+      "filename": "xinput1_3.dll",
+      "bytes": 81768,
+      "sha256": "8d540d484ea41e374fd0107d55d253f87ded4ce780d515d8fd59bbe8c98970a7",
+      "pe_machine": "0x14c"
+    }
+  ],
+  "debugger_payload_architectures_present": [
+    "i386-windows",
+    "x86_64-windows"
+  ],
+  "debugger_qualified": false,
+  "free_disk_bytes_at_inspection": 373145600000,
+  "proposal": {
+    "approved": false,
+    "environment_created": false,
+    "additional_disk_ceiling_bytes": 17179869184,
+    "download_payload_ceiling_bytes": 2147483648,
+    "aggregate_rss_stop_bytes": 8589934592,
+    "active_setup_minutes": 20,
+    "game_attempts": 1,
+    "game_seconds": 120,
+    "log_ceiling_bytes": 10485760,
+    "renderer_slots": 1,
+    "existing_bottle_clone": false,
+    "model_download": false,
+    "game_execution": false,
+    "instrumentation": false
+  },
+  "runtime_source_files_sha256": {
+    "bin/wine": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
+    "bin/cxbottle": "e0509d0ecad44ac59a610b337f884bd93304d3eb2e1efee3a96c7db4eeba4005",
+    "lib/perl/CXBottle.pm": "83b2c8e1432b00d6867099ee26e68b3b4bebbfa85e8036052660fc91f827c074",
+    "share/crossover/bottle_templates/win10_64/CXBT_win10_64.pm": "97fb00bae0c4604c3d31c653d3a50f30c79754caccf9232b95822d4471e68d04"
+  },
+  "failures_retained": [
+    "Initial app inventory met one unparsable unrelated plist; later probe counted/skipped it.",
+    "Parallel metadata save preceded output-directory creation; retry saved successfully.",
+    "Restricted signature check failed; approved read-only unrestricted check passed.",
+    "Vendor raw HTML request returned HTTP 403; web text rendered table without support icons.",
+    "In-app browser unavailable; no tab was created."
+  ],
+  "vendor_references": [
+    "https://www.codeweavers.com/crossover/changelog",
+    "https://www.codeweavers.com/crossover",
+    "https://support.codeweavers.com/crossover-mac-user-guide",
+    "https://store.steampowered.com/app/12200/Bully_Scholarship_Edition/"
+  ],
+  "no_credentials_or_saves_read": true,
+  "original_oracle_tests": 0,
+  "game_functions_recovered": 0
+}

@@ -4,6 +4,25 @@ Owner: the sole authorized Bully decompilation task. No secondary driver, model
 server or background loop was started. Branch: `research/pc-baseline`.
 Remote: https://github.com/oh-ashen-one/bully-decompilation
 
+## Read-only isolated-runtime proposal ready
+
+CrossOver found at `~/Applications/CrossOver.app`, version 26.3, build
+26.3.0.39832; Steam bottle matches and uses win10_64. Unrestricted deep/strict
+signature verification passed; sandbox failure is retained, not called damage.
+Rosetta files present, no execution test. Exact runtime/title compatibility and
+licensing/login readiness remain unobserved.
+
+Game copy size is 5,329,415,078 bytes (4.96 GiB); whole bottle metadata size is
+9,540,374,360 bytes (8.89 GiB). Whole-bottle cloning is not proposed: it retains
+host Documents links and account state. ISOLATED_RUNTIME_PROPOSAL.md specifies
+fresh-bottle mappings, owner Steam/Rockstar/EULA steps, known bundled DirectX and
+VC x86 installers, 16 GiB additional disk, 2 GiB new payload ceiling, 8 GiB
+aggregate RSS stop and one 120-second uninstrumented menu attempt. Baseline does
+not resolve indirect runtime values; debugger qualification remains separate.
+No bottle, package, app process, game run, configuration edit or model download
+occurred. Only proposal/evidence documents were created. Choice A is pending
+owner approval; Choice B continues static work. Receipt: evidence/runtime-proposal.json.
+
 ## Edge-verifier review correction
 
 The reviewer reproduced false RET fallthrough/JMP-as-CALL acceptance in 6962b77.

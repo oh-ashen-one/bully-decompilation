@@ -1,7 +1,7 @@
 # Original-execution oracle plan — proposed, not run
 
-Current evidence is static. Neither candidate has an independently written
-semantic contract or observed original execution. The two `.bind` leaf hypotheses
+Current evidence is static. None of the three candidates has an independently written
+semantic contract or observed original execution. The three `.bind` leaf hypotheses
 are entry-section leads, with their gameplay relevance unknown. They must not be
 called handle validators or used as justification for injecting an engine hook.
 
@@ -26,10 +26,12 @@ local analyst/model or explicit permission for a particular different destinatio
 
 ## Establish an isolated reference environment before any launch
 
-The owned installation is under a CrossOver Steam bottle. This is installation
-context, not proof of a currently runnable CrossOver version; the conventional
-application bundle path did not provide a verified version. A later execution
-proposal must identify the actual runtime, bottle and owner first.
+Read-only inspection now locates CrossOver 26.3 (build 26.3.0.39832) in the
+user Applications folder and the matching win10_64 Steam bottle. Unrestricted
+code-signature verification passed. This is runtime metadata, not a successful
+game launch. [ISOLATED_RUNTIME_PROPOSAL.md](ISOLATED_RUNTIME_PROPOSAL.md) supplies
+the concrete owner prerequisites, fresh-bottle/save isolation, measured storage,
+bounded observation and cleanup choice. That proposal remains unapproved.
 
 Use a separate, user-approved test environment with the owned game, fresh test
 saves/configuration and a known writable directory. Do not reuse production
