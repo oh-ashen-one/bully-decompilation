@@ -14,7 +14,8 @@ in the private provenance record rather than public documentation.
 
 Public original files: PE metadata reader; synthetic PE fixtures; invented C
 handle/ABI fixture; tests and qualification runner; exact-build entry audit
-driver; bounded import-table mapper; documentation and evidence schemas. These were written for this project.
+driver; bounded import-table mapper; independently written graph/dependency
+queries, synthetic graph fixtures and validation tests; documentation and evidence schemas. These were written for this project.
 No bully-re implementation, generated skeleton or proprietary decompiler text
 was copied or adapted. No original source recovery claim is made.
 

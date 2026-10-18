@@ -19,21 +19,25 @@
     "entry_audit_regressions": 2,
     "qualification_regressions": 6,
     "import_mapping_tests": 5,
-    "total_python_tests": 27,
+    "total_python_tests": 38,
     "import_slots_mapped": 200,
     "analyzer_gate_regressions": 5,
-    "rea_synthetic_boundary_combinations": 2880
+    "rea_synthetic_boundary_combinations": 2880,
+    "reference_graph_regressions": 5,
+    "value_dependency_regressions": 6,
+    "static_entry_call_paths_checked": 5
   },
   "counting_rule": "Only exact-target functions with reviewed boundaries enter the function ledger. Fixtures, address references and decoded windows are excluded.",
   "functions": [],
   "artifact_function_candidates": {
     "section": ".bind",
     "seeds_examined": 6,
-    "closed_leaf_hypotheses": 2,
-    "independent_decoder_cross_checks": 2,
+    "closed_leaf_hypotheses": 3,
+    "independent_decoder_cross_checks": 3,
     "gameplay_role_established": false,
     "semantic_contracts": 0,
     "original_execution_observations": 0,
-    "counted_as_game_functions": false
+    "counted_as_game_functions": false,
+    "static_call_paths_checked": 5
   }
 }

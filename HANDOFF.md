@@ -4,6 +4,47 @@ Owner: the sole authorized Bully decompilation task. No secondary driver, model
 server or background loop was started. Branch: `research/pc-baseline`.
 Remote: https://github.com/oh-ashen-one/bully-decompilation
 
+## Latest saved milestone: static call paths and value boundary
+
+All current artifacts are saved. Entry graph: 1,782 instruction starts / 7,921
+bytes, independently checked with LLVM plus 1,933 edges. Five static call paths
+reach three `.bind` candidates. Candidate 2 adds a closed 167-instruction /
+503-byte boundary across two ranges; its 186 edges are independently checked.
+The original hash is unchanged. No game launch or runtime instrumentation occurred.
+
+The computed transfer was followed beyond the first unknown call to candidate 2.
+Its return depends on six dynamic memory reads and an incoming stack value;
+both callers' inferred arguments also retain unknown input/memory/call-return
+boundaries. The bounded structural/value model now needs a reviewed private
+semantic/state contract or an explicitly approved isolated runtime observation.
+This is a precise method limit, not a claim that all static research is exhausted.
+Missing local model weights alone did not stop the structural work.
+
+See docs/STATIC_CALL_PATHS.md and evidence/static-call-paths.json for the method,
+limits, retained failures and deterministic edge checks. Current tests: 38 Python,
+14 native sanitizer C cases, deterministic i386 COFF; prior synthetic expression
+comparison remains 2,880. Game functions recovered/oracle-tested/matched: **0**.
+
+Private continuation points (all ignored):
+- local-private/reference-value-index-retail: complete entry graph and cached SSA.
+- local-private/reference-five-paths-llvm: independently checked five paths.
+- local-private/callee-two-graph-v2: isolated callee graph and cached SSA.
+- local-private/callee-two-return-query and callee-two-caller-query: bounded slices.
+- local-private/callee-two-graph: retained rejected empty graph / loader conflict.
+
+The cache queries avoid repeated PE imports. Final synthetic callee qualification
+passed in 4.18 seconds. Latest all-private file bytes: 1,896,618,043, below 5 GiB.
+No weights, paid API, persistent bridge or unattended loop was started. Original
+files/saves and every unrelated workload remain untouched.
+
+Next decision: obtain a reviewed local semantic contract/state model, or approve
+and define the isolated runtime/observation environment in ORIGINAL_ORACLE_PLAN.
+The exact optional model proposal remains unapproved in NEXT_LOCAL_MODEL. No
+runtime approval is inferred from installing Ghidra/REA. Compiler/patch/ABI
+uncertainties still prevent matching claims. Continue public/reference or bounded
+static research when it supplies new evidence; do not repeat the same query as
+if it could manufacture unknown process state.
+
 ## Verified work
 
 Exact owned target located and fingerprinted; headers cross-checked with LLVM.
@@ -96,15 +137,15 @@ No weights downloaded or inference started. At 23:11 UTC free pages were
 - Retail patch, region and modification status not authenticated. Hash is exact.
 - Linker 8.0 is evidence, not exact compiler/SDK/CRT/ABI/options recovery.
 - Ghidra/REA now installed and synthetically qualified as recorded above.
-  Complete real function boundary and local semantic contract are still absent.
+  Gameplay-function boundaries and local semantic contracts are still absent.
 - No qualified local weights in documented locations. Modelfiles point to a
   former nonexistent home; Ollama launcher dangles; LM Studio home missing.
   llama.cpp 0.4.0 build10809 is usable as a runtime prerequisite, not qualified
   inference. No repair, model load or download occurred.
 - No real handle function address/layout or original execution oracle yet.
 
-Next: establish a caller/reference path to a bounded entry-section candidate;
-review its side effects locally and continue locating a real gameplay target.
+That earlier caller-path milestone is now complete as recorded above. Next,
+resolve the documented input/state boundary and continue locating a gameplay target.
 Qualified local semantic analysis is needed for a private contract, but is not
 a blanket blocker for analyzer-only structural work or public compiler/reference
 research. Review the concrete isolated environment and instrumentation before

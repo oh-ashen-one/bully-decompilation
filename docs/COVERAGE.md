@@ -7,7 +7,7 @@ its exact version, APIs and licensing cannot be assumed.
 
 | Workstream | Full-game acceptance scope | Current original-target evidence |
 |---|---|---|
-| Startup/runtime | Boot, shutdown, memory, threading, exceptions, platform services | Header/import audit; bounded entry decode |
+| Startup/runtime | Boot, shutdown, memory, threading, exceptions, platform services | Header/import audit; entry graph and five static call paths |
 | Resource system | Archives, paths, streaming, formats, ownership and error behavior | None |
 | World/rendering | Scene graph, interiors/exteriors, cameras, animation, materials, visibility | None |
 | Simulation | Collision, physics, entities, pools, movement, AI, combat, vehicles | None; invented handle fixture only |
@@ -37,12 +37,12 @@ count is **unknown**. There is one binary header/import audit and one bounded
 entry window, neither a recovered function. No whole-game percentage is reported.
 `evidence/coverage.json` is the machine-readable ledger.
 
-Later bounded discovery found two `.bind` leaf hypotheses with independent
+Later bounded discovery found three `.bind` leaf hypotheses with independent
 decoder agreement. They are recorded as **artifact function candidates**, outside
-the game-function counts: gameplay role, callers, semantic contracts and runtime
-execution remain unverified. See [STATIC_CANDIDATES.md](STATIC_CANDIDATES.md).
+the game-function counts: five static caller paths are checked, while gameplay role, semantic contracts
+and runtime execution remain unverified. See [STATIC_CALL_PATHS.md](STATIC_CALL_PATHS.md).
 
-Follow-up infrastructure evidence: 27 Python tests, including negative analyzer,
+Follow-up infrastructure evidence: 38 Python tests, including negative analyzer,
 architecture, sanitizer
 and symbol/output-preservation regressions; 200 import slots mapped locally;
 zero direct-IAT-call patterns for one clock anchor in initialized `.text`.

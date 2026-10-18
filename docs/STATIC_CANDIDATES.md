@@ -71,3 +71,12 @@ defines the conditions before any original execution, and
 [the model proposal](NEXT_LOCAL_MODEL.md) identifies the exact optional decision.
 No model approval is needed to continue public-reference research or bounded
 analyzer-only structural checks.
+
+## Subsequent caller and boundary checkpoint
+
+The initial 256-byte filter is not a definitive rejection of the other leads.
+[STATIC_CALL_PATHS.md](STATIC_CALL_PATHS.md) supersedes the caller-unknown state:
+five entry-rooted static call paths are independently checked. Candidate 2 now
+has a closed 167-instruction / 503-byte boundary across two ranges after clearing
+an imported data unit from its disposable analysis database. Artifact hypotheses
+total three; game recovery remains zero. The current suite has 38 Python tests.
