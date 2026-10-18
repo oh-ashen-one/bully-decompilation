@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "qualification_repeated_identically": true,
+  "coff_sha256": "ab00b31b6c5cc67210935ebdf06643b75aa5b14a7692436adcf3ccc777d25549",
+  "unexpected_target_rejected_before_disassembly": true,
+  "input_unchanged": true,
+  "note": "No game-oracle or runtime result implied.",
+  "coff_timestamp": 0,
+  "complete_objects_equal_across_spaced_builds": true,
+  "normalization": "none; compiler emitted zero timestamp using recorded flag",
+  "prior_failure": "Default timestamp changed; immediate same-second repeats were insufficient. See failures.json."
+}

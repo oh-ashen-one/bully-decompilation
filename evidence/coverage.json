@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-18",
+  "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+  "target_function_denominator": null,
+  "game_functions": {
+    "inventoried": 0,
+    "analyzed": 0,
+    "candidate_implemented": 0,
+    "compiled": 0,
+    "original_oracle_tested": 0,
+    "binary_matched": 0
+  },
+  "gameplay_scenarios_tested": 0,
+  "infrastructure": {
+    "pe_audit_tests": 9,
+    "synthetic_handle_cases": 14,
+    "bounded_entry_windows": 1
+  },
+  "counting_rule": "Only exact-target functions with reviewed boundaries enter the function ledger. Fixtures, address references and decoded windows are excluded.",
+  "functions": []
+}

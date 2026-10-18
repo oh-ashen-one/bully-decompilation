@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "failures": [
+    {
+      "id": "entry-disassembly-code-flag",
+      "observation": "LLVM -d returned zero decoded lines in the bounded executable .bind entry window.",
+      "resolution": "Bounded -D returned 56 decoded lines; this is linear decoding, not a recovered function."
+    },
+    {
+      "id": "local-model-discovery",
+      "observation": "LM Studio listing failed because its daemon/home was unavailable. No verified weights found in inspected locations.",
+      "resolution": "Unresolved. No model inference, repair, download or shared-server change performed."
+    },
+    {
+      "id": "coff-wall-clock-timestamp",
+      "observation": "Default Clang COFF output embedded wall-clock timestamps; immediate same-second agreement did not prove repeatability across time.",
+      "resolution": "Use -mno-incremental-linker-compatible, require timestamp zero, then compare complete objects across spaced builds. No bytes normalized after compilation."
+    },
+    {
+      "id": "coff-flag-probe",
+      "observation": "An exploratory -Xclang -fno-incremental-linker-compatible flag was rejected as unknown.",
+      "resolution": "Local clang --help-hidden exposed the supported driver option -mno-incremental-linker-compatible."
+    },
+    {
+      "id": "llvm-readobj-unavailable",
+      "observation": "xcrun could not locate llvm-readobj in the installed Xcode toolchain.",
+      "resolution": "Read the documented COFF timestamp field with Python struct; existing llvm-objdump and llvm-nm handled the other checks."
+    }
+  ]
+}

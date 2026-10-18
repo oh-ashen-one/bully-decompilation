@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+  "size_bytes": 8556544,
+  "machine": "IMAGE_FILE_MACHINE_I386",
+  "pe_format": "PE32",
+  "endian": "little",
+  "pointer_bits": 32,
+  "image_base": "0x400000",
+  "entry_rva": "0x1cf32ed",
+  "linker_version": "8.0",
+  "coff_timestamp": 1228925566,
+  "image_size": 30707712,
+  "fixed_versions": [],
+  "debug_directory_size": 0,
+  "steam_appid": "12200",
+  "steam_manifest_buildid": "16483958",
+  "patch": "unverified",
+  "region": "unknown",
+  "source": "user-authorized owned Steam PC installation",
+  "input_hash_rechecked_unchanged": true
+}
