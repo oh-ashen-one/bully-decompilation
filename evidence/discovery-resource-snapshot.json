@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-10-18T23:11:31.469598+00:00",
+  "machine": "arm64",
+  "system": "Darwin",
+  "host_memory_bytes": 274877906944,
+  "free_pages_bytes": 129977466880,
+  "inactive_pages_bytes": 60423667712,
+  "compressed_storage_bytes": 0,
+  "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
+  "available_disk_bytes": 375383330816,
+  "local_private_allocated_bytes": 1928040448
+}

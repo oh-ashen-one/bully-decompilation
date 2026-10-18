@@ -1,0 +1,19 @@
+{
+  "input_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+  "synthetic": false,
+  "exit_code": 0,
+  "script": "BoundedCandidateScan.java",
+  "deadline_seconds": 180,
+  "timed_out": false,
+  "elapsed_seconds": 5.53,
+  "input_unchanged": true,
+  "summary_written": true,
+  "summary_structurally_valid": true,
+  "summary_validation_error": null,
+  "configured_heap": "2G",
+  "configured_active_processors": 2,
+  "configured_ghidra_max_cpu": 2,
+  "target_executed": false,
+  "script_sha256": "e4a63b94a9b4e8340693c3782f5a2106e91504b9b4d07b27903dbfe8b7f96146",
+  "runner_sha256": "90730cfeeca4389b5f7b0c996b7e1441f26ea7a530ffbb641c40e0ce133747c0"
+}

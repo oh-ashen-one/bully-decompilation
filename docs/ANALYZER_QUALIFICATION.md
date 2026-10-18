@@ -1,5 +1,11 @@
 # Ghidra and REA qualification — 2026-10-18
 
+Follow-up: [STATIC_CANDIDATES.md](STATIC_CANDIDATES.md) records two bounded
+entry-section hypotheses and independent decoder checks. Later review added
+explicit ARM64 and structural-summary gates with five regressions. Original
+successful receipts remain preserved; v2 synthetic comparison passed and the
+current infrastructure count is 27.
+
 The user approved Ghidra and REA installation. Both are now task-local under
 ignored `local-private/tools`. No model weights, paid inference, agent-profile
 registration, system service, quarantine removal or security-setting change was

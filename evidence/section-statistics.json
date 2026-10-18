@@ -1,0 +1,37 @@
+[
+  {
+    "section": ".text",
+    "raw_bytes": 5222400,
+    "entropy_bits_per_byte": 7.99997,
+    "frame_prologue_pattern_count": 0,
+    "zero_fraction": 0.00391
+  },
+  {
+    "section": ".rdata",
+    "raw_bytes": 819200,
+    "entropy_bits_per_byte": 5.26307,
+    "frame_prologue_pattern_count": 0,
+    "zero_fraction": 0.36914
+  },
+  {
+    "section": ".data",
+    "raw_bytes": 2129920,
+    "entropy_bits_per_byte": 4.5139,
+    "frame_prologue_pattern_count": 0,
+    "zero_fraction": 0.44825
+  },
+  {
+    "section": ".rsrc",
+    "raw_bytes": 28672,
+    "entropy_bits_per_byte": 6.20068,
+    "frame_prologue_pattern_count": 0,
+    "zero_fraction": 0.18942
+  },
+  {
+    "section": ".bind",
+    "raw_bytes": 352256,
+    "entropy_bits_per_byte": 7.97862,
+    "frame_prologue_pattern_count": 6,
+    "zero_fraction": 0.01612
+  }
+]

@@ -25,8 +25,10 @@ was copied or adapted. No original source recovery claim is made.
   decision guide, Bully, local/cloud and validation references. Method reference;
   no code copied.
 - Official [Ghidra 12.1.4 release](https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build)
-  and pinned setup/native-build documentation: installation proposal only, no
-  tool archive or source imported into this repository.
+  and pinned setup/native-build documentation: approved task-local installation
+  and native build completed. No tool archive/source is tracked publicly.
+- Official [REA release source](https://github.com/morluto/rea/tree/27dc42d10249f0410904a75c0997842eb03b931c),
+  MIT, corresponding to installed npm 6.7.0; task-local CLI only. See analyzer receipts.
 - Official Qwen [7B](https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF)
   and [14B](https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct-GGUF) model cards
   and metadata: exact optional download proposals only; no weights downloaded.

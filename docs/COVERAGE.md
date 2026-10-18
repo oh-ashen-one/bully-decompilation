@@ -37,7 +37,13 @@ count is **unknown**. There is one binary header/import audit and one bounded
 entry window, neither a recovered function. No whole-game percentage is reported.
 `evidence/coverage.json` is the machine-readable ledger.
 
-Follow-up infrastructure evidence: 22 Python tests, including negative sanitizer
+Later bounded discovery found two `.bind` leaf hypotheses with independent
+decoder agreement. They are recorded as **artifact function candidates**, outside
+the game-function counts: gameplay role, callers, semantic contracts and runtime
+execution remain unverified. See [STATIC_CANDIDATES.md](STATIC_CANDIDATES.md).
+
+Follow-up infrastructure evidence: 27 Python tests, including negative analyzer,
+architecture, sanitizer
 and symbol/output-preservation regressions; 200 import slots mapped locally;
 zero direct-IAT-call patterns for one clock anchor in initialized `.text`.
 Import slots and byte patterns never enter the game-function denominator.

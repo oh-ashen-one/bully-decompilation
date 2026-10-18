@@ -5,15 +5,22 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import platform
 
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE_SHA = 'bfae632830f91dc73b91c72e7cd9cec985ba4c1ceaa807ce94eaad153b082f5a'
+
+def require_native_arm64(machine, system):
+    if machine.lower() not in ('arm64','aarch64') or system != 'Darwin':
+        raise ValueError('this qualification requires native ARM64 macOS')
+    return {'machine':machine,'system':system}
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('evidence', type=Path)
     p.add_argument('--output', type=Path, required=True)
     a = p.parse_args()
+    host = require_native_arm64(platform.machine(), platform.system())
     evidence = json.loads(a.evidence.read_text())
     if (evidence['subject']['digest']['sha256'] != FIXTURE_SHA or
         evidence['operation'] != 'procedure_pseudo_code' or
@@ -59,6 +66,7 @@ int main(void) {
         (out/f'{name}.stderr.log').write_text(result.stderr)
         if result.returncode or result.stderr: raise RuntimeError(f'{name} failed; inspect local logs')
     receipt={'scope':'original synthetic fixture only','boundary_combinations':2880,
+             'observed_host':host,
              'native_arm64_comparison_passed':True,'x86_executed':False,
              'pseudocode_sha256':digest,'sanitizers':'address,undefined; recovery disabled',
              'game_oracle_tests':0,'windows_abi_qualified_by_this_test':False,

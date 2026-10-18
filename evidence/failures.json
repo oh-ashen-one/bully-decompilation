@@ -70,6 +70,26 @@
       "id": "ghidra-instruction-span-boundary",
       "observation": "First retail Ghidra audit found an instruction that started inside its 256-byte restriction but extended outside it. The audit guard rejected it; Ghidra still exited zero.",
       "resolution": "Reserve final 14 bytes from possible starts, assert complete spans, require summary file as well as process exit success. Corrected script requalified on synthetic input and retail pass completed. Original failed logs preserved."
+    },
+    {
+      "id": "synthetic-native-architecture-label",
+      "observation": "Prior comparison receipt labeled native ARM64 without a runtime architecture gate; recorded runs were in fact ARM64.",
+      "resolution": "Require Darwin arm64/aarch64, record observed platform and reject mismatches; negative regression added. Earlier receipt preserved; v2 comparison passed."
+    },
+    {
+      "id": "ghidra-summary-existence-only",
+      "observation": "Prior runner checked summary existence but did not validate disassembly success or count consistency. Existing successful receipt remains valid evidence.",
+      "resolution": "Validate exact target, scope, positive bounded entry counts, disassembly_applied, and candidate completion/count relationships. Added malformed/false/zero/oversized/count-mismatch negative tests."
+    },
+    {
+      "id": "candidate-seed-filter-rejections",
+      "observation": "Four of six entry-section pattern leads failed closed-leaf checks: undecoded destinations or no return within budget.",
+      "resolution": "Retain rejected records locally; no silent widening. Two accepted hypotheses independently cross-checked with LLVM."
+    },
+    {
+      "id": "headroom-sysctl-sandbox",
+      "observation": "Initial read-only sysctl memory query denied by shell sandbox.",
+      "resolution": "Approved read-only resource observation succeeded without settings changes."
     }
   ]
 }

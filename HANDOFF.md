@@ -69,6 +69,30 @@ See docs/ANALYZER_QUALIFICATION.md and evidence/analyzer-*.json.
 
 ## Blockers and next milestone
 
+Latest independent preparation: tools/select_candidate_seeds.py identifies six
+bounded `.bind` prologue-pattern leads. BoundedCandidateScan.java accepted two
+closed leaf hypotheses and rejected four, retaining all detailed output under
+local-private/ghidra-candidates-retail-v1. Candidate IDs 3/4 are 101/117 bytes,
+37/42 instructions, one return each with 8/12-byte cleanup. LLVM independently
+agreed with every instruction start and raw file byte. No semantic contract,
+caller proof, gameplay role or original execution follows. Pseudocode stays local.
+Runtime: 5.53 seconds, 2 GiB heap, two JVM processors, unchanged original hash.
+These hypotheses are outside the game-function counts, which remain zero.
+
+Review fixes now require Darwin ARM64 for the synthetic comparison and validate
+summary target/scope/completion/counts instead of mere existence. Five new
+negative regressions pass; total Python tests 27, C cases 14, architecture-gated
+synthetic expression comparison 2,880. Prior receipts retained, including
+qualification-before-analyzer-gates.json and rea-synthetic-comparison.json.
+
+docs/ORIGINAL_ORACLE_PLAN.md gives a proposed isolated baseline/function-oracle
+sequence, without executing it. Actual current CrossOver runtime/version remains
+unverified. docs/NEXT_LOCAL_MODEL.md refreshes the exact 7B Q4_K_M proposal:
+4,683,073,536 bytes, Apache-2.0, installed llama.cpp runtime, additional 6 GiB disk
+approval, 8 GiB process-family RSS stop, four threads and 120-second synthetic run.
+No weights downloaded or inference started. At 23:11 UTC free pages were
+121.05 GiB, inactive pages 56.27 GiB, disk available 349.6 GiB, zero swap/compression.
+
 - Retail patch, region and modification status not authenticated. Hash is exact.
 - Linker 8.0 is evidence, not exact compiler/SDK/CRT/ABI/options recovery.
 - Ghidra/REA now installed and synthetically qualified as recorded above.
@@ -79,11 +103,12 @@ See docs/ANALYZER_QUALIFICATION.md and evidence/analyzer-*.json.
   inference. No repair, model load or download occurred.
 - No real handle function address/layout or original execution oracle yet.
 
-Next: use a qualified local analyst/model to inspect one real handle-validation
-candidate and its callers, with a measured window and independently written
-contract. Do not expand an incomplete entry trace into a recovery claim. Review
-instrumentation separately before controlled original-oracle tests. The current
-cloud workflow may continue public compiler/reference research and original tests.
+Next: establish a caller/reference path to a bounded entry-section candidate;
+review its side effects locally and continue locating a real gameplay target.
+Qualified local semantic analysis is needed for a private contract, but is not
+a blanket blocker for analyzer-only structural work or public compiler/reference
+research. Review the concrete isolated environment and instrumentation before
+controlled original-oracle tests. Never widen an incomplete trace silently.
 
 Option A in docs/SETUP_PROPOSAL was approved/completed. Option B, the optional
 4,683,073,536-byte official Qwen 7B GGUF and bounded CPU-only qualification,

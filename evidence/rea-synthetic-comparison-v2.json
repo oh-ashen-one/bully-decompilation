@@ -1,0 +1,15 @@
+{
+  "scope": "original synthetic fixture only",
+  "boundary_combinations": 2880,
+  "observed_host": {
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "native_arm64_comparison_passed": true,
+  "x86_executed": false,
+  "pseudocode_sha256": "375d126e16247747aec3fac8bf856cef0d1d4309bde7f760bf2a6a9a93f19ac8",
+  "sanitizers": "address,undefined; recovery disabled",
+  "game_oracle_tests": 0,
+  "windows_abi_qualified_by_this_test": false,
+  "rea_raw_compiler_spec": "gcc"
+}

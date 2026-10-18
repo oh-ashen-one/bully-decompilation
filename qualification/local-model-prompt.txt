@@ -1,0 +1,34 @@
+This is an original synthetic tool-qualification fixture. It is not recovered game code.
+Do not execute tools, request files, infer a game, or claim an original compiler.
+
+The source was compiled into an i386 Windows COFF object with Clang 21 at -O2.
+One wrapper has the exact defined symbol _synthetic_handle_matches. A second has
+the exact defined symbol _synthetic_handle_matches_stdcall@16 and a decoded return
+instruction that removes 16 stack bytes. Neither x86 function has been executed.
+
+typedef unsigned int u32;
+typedef unsigned short u16;
+typedef unsigned char u8;
+int synthetic_handle_matches(u32 handle, u32 capacity, u16 generation, u8 live) {
+    if (handle == 0xffffffffu || capacity == 0 || capacity > 65535u) return 0;
+    return (handle & 65535u) < capacity && (handle >> 16) == generation && live != 0;
+}
+
+A decompiler supplied this equivalent-looking expression using unsigned 32-bit h/n,
+unsigned 16-bit g, and char live:
+return ((h & 0xffffu) < n) && h != 0xffffffffu && n - 1u < 0xffffu
+       && (h >> 16) == (unsigned int)g && live != 0;
+
+In at most 1,500 words:
+1. Describe the exact contract, widths, signedness, outputs and side effects.
+2. Explain the unsigned n - 1u guard, including n=0, n=65535, n=65536 and n=0xffffffff.
+3. Give expected results for (h,n,g,live):
+   (0,1,0,1), (0,1,0,0), (0xffffffff,65535,65535,1),
+   (0x00010002,3,1,1), (0x00010003,3,1,1), (0x00010002,3,2,1),
+   (0x80000000,1,32768,1), (0x0000fffe,65535,0,255).
+4. Separate source-declared types, calling-convention evidence and unsupported
+   conclusions. Does 16-byte return cleanup by itself prove four integer parameters?
+   Does an inferred boolean return prove the source return type was bool?
+5. Give one discriminating test for replacing the unsigned guard with signed math,
+   one uncertainty requiring more evidence, and an explicit limit on what these
+   synthetic results say about any retail program.

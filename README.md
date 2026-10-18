@@ -17,8 +17,8 @@ outside this repository's scope.
 - Built an original read-only PE audit; cross-checked headers using LLVM.
 - Inspected a bounded entry-point window locally. Entry is in `.bind`, not
   `.text`; no gameplay function or compiler identity inferred from that alone.
-- Passed 22 infrastructure tests (9 PE, 5 import-map, 2 output-preservation,
-  6 qualification regressions) and 14 invented handle-contract cases with native
+- Passed 27 infrastructure tests (9 PE, 5 import-map, 2 output-preservation,
+  6 qualification and 5 analyzer-gate regressions) and 14 invented handle-contract cases with native
   AddressSanitizer/UndefinedBehaviorSanitizer. Compiled a freestanding i386 COFF
   ABI fixture and checked cdecl/stdcall symbol/stack conventions.
 - Mapped 200 import slots locally. A bounded direct-call encoding scan for one
@@ -29,6 +29,9 @@ outside this repository's scope.
   one flow leaving the 256-byte window. No complete function boundary established.
   See [analyzer qualification](docs/ANALYZER_QUALIFICATION.md) for limits and failures.
 - Local model weights remain unavailable; no model download or paid API started.
+- Found two bounded `.bind` leaf-function hypotheses, independently checked with
+  LLVM: 101/117 bytes and return cleanup of 8/12 bytes. Their purpose and callers
+  remain unknown; see [static candidate evidence](docs/STATIC_CANDIDATES.md).
 
 **Recovered game functions: 0. Original-game differential tests: 0. Binary
 matches: 0.** The function denominator is not established for this executable.

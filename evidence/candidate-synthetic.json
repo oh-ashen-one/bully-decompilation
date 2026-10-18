@@ -1,0 +1,17 @@
+{
+  "target_sha256": "983f19b9edfea3eacfae5896431a2d08e72b86611febb31a46f5743b621a3003",
+  "seed_count": 2,
+  "scan_completed": true,
+  "closed_leaf_candidates": 2,
+  "decompiled_candidates": 2,
+  "window_bytes_per_seed": 256,
+  "instruction_start_budget_bytes": 242,
+  "max_instructions_per_seed": 128,
+  "decompile_timeout_seconds_per_candidate": 10,
+  "auto_analysis": false,
+  "max_heap_bytes": 2147483648,
+  "reported_processors": 2,
+  "function_records_are_created_hypotheses": true,
+  "game_functions_recovered": 0,
+  "original_oracle_tests": 0
+}

@@ -1,0 +1,40 @@
+{
+  "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+  "cross_checked_candidates": 2,
+  "candidates": [
+    {
+      "candidate_id": 3,
+      "section": ".bind",
+      "body_bytes": 101,
+      "instruction_count": 37,
+      "decoder_addresses_agree": true,
+      "llvm_bytes_equal_original_file": true,
+      "return_pop_bytes": [
+        8
+      ],
+      "standard_frame_prologue": true,
+      "body_sha256": "ab7e2c324fcf9abdf9ee499a6a5adc7036ad9593edc6100368cca7919fe68e25",
+      "semantic_contract_established": false,
+      "original_execution_observed": false
+    },
+    {
+      "candidate_id": 4,
+      "section": ".bind",
+      "body_bytes": 117,
+      "instruction_count": 42,
+      "decoder_addresses_agree": true,
+      "llvm_bytes_equal_original_file": true,
+      "return_pop_bytes": [
+        12
+      ],
+      "standard_frame_prologue": true,
+      "body_sha256": "6029891bdd12cc938b6d395e866b4375cf99fb8c5f8f68386dd60f0c68c56c31",
+      "semantic_contract_established": false,
+      "original_execution_observed": false
+    }
+  ],
+  "input_unchanged": true,
+  "game_functions_recovered": 0,
+  "original_oracle_tests": 0,
+  "limitation": "Static closed-leaf hypotheses in startup wrapper; no gameplay or reachability claim."
+}

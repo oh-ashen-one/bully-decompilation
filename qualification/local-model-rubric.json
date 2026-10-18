@@ -1,0 +1,18 @@
+{
+  "scope": "Original synthetic qualification only; no model run yet",
+  "required": [
+    "Correct 32/16/8-bit unsigned source widths and integer 0/1 output",
+    "No side effects or invented memory lifetime behavior",
+    "Unsigned subtraction wraps at n=0 and admits exactly capacities 1..65535",
+    "All eight explicit expected results correct",
+    "Nonzero live values including 128/255 are true",
+    "High-bit handle generation remains unsigned",
+    "Symbol plus stack-cleanup evidence distinguished from an inferred complete signature",
+    "No claim that boolean decompiler output recovers the original source type",
+    "A discriminating signedness test with a correct expected outcome",
+    "Explicitly no retail recovery, original-oracle or binary-match conclusion"
+  ],
+  "expected_case_results": [1, 0, 0, 1, 0, 0, 1, 1],
+  "pass_rule": "All required checks supported; no critical signedness/ABI/runtime error. Human or independently reviewed grading must cite the retained response.",
+  "failure_rule": "Timeout, resource excess, invented evidence, forbidden tool request or any critical semantic error fails; no automatic larger model or budget."
+}
