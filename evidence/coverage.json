@@ -19,13 +19,14 @@
     "entry_audit_regressions": 2,
     "qualification_regressions": 6,
     "import_mapping_tests": 5,
-    "total_python_tests": 38,
+    "total_python_tests": 46,
     "import_slots_mapped": 200,
     "analyzer_gate_regressions": 5,
     "rea_synthetic_boundary_combinations": 2880,
     "reference_graph_regressions": 5,
     "value_dependency_regressions": 6,
-    "static_entry_call_paths_checked": 5
+    "static_entry_call_paths_checked": 5,
+    "edge_semantics_regressions": 8
   },
   "counting_rule": "Only exact-target functions with reviewed boundaries enter the function ledger. Fixtures, address references and decoded windows are excluded.",
   "functions": [],

@@ -1,0 +1,95 @@
+{
+  "supersedes": "Edge-validation confidence in commit 6962b77 and evidence/static-call-paths.json; retained as historical evidence.",
+  "defect": "Old verifier accepted RET fallthrough, JMP as CALL, and untyped call edges within a path.",
+  "legacy_synthetic_false_positive": {
+    "target_sha256": "25df46747eb42ce74a0e18fe0cabe707bac5b091adc80e2af0b35742688eb86c",
+    "instruction_starts_checked": 3,
+    "supported_edges": 3,
+    "unsupported_edge_encodings": 0,
+    "call_paths_checked": 1,
+    "paths": [
+      {
+        "candidate_id": "invented",
+        "path_instruction_count": 3,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      }
+    ],
+    "input_unchanged": true,
+    "conditional_feasibility_evaluated": false,
+    "call_returns_assumed": true,
+    "game_functions_recovered": 0,
+    "original_oracle_tests": 0
+  },
+  "legacy_receipt_is_known_invalid": true,
+  "reproducer_executed_as_code": false,
+  "corrected_main_rejects_reproducer": true,
+  "revalidation_entry": {
+    "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+    "instruction_starts_checked": 1782,
+    "supported_edges": 1933,
+    "unsupported_edge_encodings": 0,
+    "opcode_edge_kinds_verified": true,
+    "path_traversal_excludes_call_edges": true,
+    "verifier_sha256": "4e6a5fccc01e852f9f4379d55d30f2122f3739fcc94d3da37317c70ba64c829b",
+    "call_paths_checked": 5,
+    "paths": [
+      {
+        "candidate_id": 4,
+        "path_instruction_count": 49,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": 4,
+        "path_instruction_count": 54,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": 3,
+        "path_instruction_count": 281,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": "additional-validated-callee",
+        "path_instruction_count": 80,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": "additional-validated-callee",
+        "path_instruction_count": 419,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      }
+    ],
+    "input_unchanged": true,
+    "conditional_feasibility_evaluated": false,
+    "call_returns_assumed": true,
+    "game_functions_recovered": 0,
+    "original_oracle_tests": 0
+  },
+  "revalidation_callee_two": {
+    "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+    "instruction_starts_checked": 167,
+    "supported_edges": 186,
+    "unsupported_edge_encodings": 0,
+    "opcode_edge_kinds_verified": true,
+    "path_traversal_excludes_call_edges": true,
+    "verifier_sha256": "4e6a5fccc01e852f9f4379d55d30f2122f3739fcc94d3da37317c70ba64c829b",
+    "call_paths_checked": 0,
+    "paths": [],
+    "input_unchanged": true,
+    "conditional_feasibility_evaluated": false,
+    "call_returns_assumed": true,
+    "game_functions_recovered": 0,
+    "original_oracle_tests": 0
+  },
+  "new_regression_tests": 8,
+  "limits": "Conditional feasibility and call-return behavior remain unproven. Unsupported transfer encodings fail closed; this is not a complete x86 emulator.",
+  "initial_regression_failure": "Temporary-directory symlink was not canonicalized; private-path gate fired before edge test. Test root corrected to resolve(); all eight regressions then passed.",
+  "game_functions_recovered": 0,
+  "original_oracle_tests": 0
+}

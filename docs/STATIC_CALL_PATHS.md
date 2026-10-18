@@ -4,6 +4,23 @@ This checkpoint is static evidence for the exact owned PC executable in
 [TARGET.md](TARGET.md). It does not execute the game, establish gameplay semantics
 or advance recovered/matched/original-oracle game-function counts above zero.
 
+## Independent-review correction
+
+Commit 6962b77's edge checker was too permissive: adjacency admitted a fallthrough
+from RET, and destination-only checking admitted JMP as CALL. Its untyped edge
+relation could also admit a call as an intra-function path step. The reviewer's
+invented PE reproducer was reproduced and its false-positive receipt retained.
+Those earlier receipts alone do not justify opcode-level path confidence.
+
+The corrected checker validates each edge kind against its control-transfer
+opcode, forbids fallthrough after unconditional transfers/returns, rejects
+unsupported/malformed edges, retains edge kinds, and requires a real direct CALL
+at each endpoint. Eight new regressions include the actual main-entry reproducer.
+The saved real entry graph revalidates all 1,933 edges and five paths; candidate 2
+revalidates 186 edges. Current receipt:
+[edge-verifier-v2.json](../evidence/edge-verifier-v2.json). The full suite is now 46
+Python tests; runtime/semantic coverage remains unchanged.
+
 ## Independently checked structure
 
 The entry-rooted traversal decoded 1,782 instructions / 7,921 bytes in `.bind`.

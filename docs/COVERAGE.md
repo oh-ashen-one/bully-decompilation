@@ -42,7 +42,7 @@ decoder agreement. They are recorded as **artifact function candidates**, outsid
 the game-function counts: five static caller paths are checked, while gameplay role, semantic contracts
 and runtime execution remain unverified. See [STATIC_CALL_PATHS.md](STATIC_CALL_PATHS.md).
 
-Follow-up infrastructure evidence: 38 Python tests, including negative analyzer,
+Follow-up infrastructure evidence: 46 Python tests, including negative analyzer,
 architecture, sanitizer
 and symbol/output-preservation regressions; 200 import slots mapped locally;
 zero direct-IAT-call patterns for one clock anchor in initialized `.text`.

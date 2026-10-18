@@ -17,7 +17,7 @@ outside this repository's scope.
 - Built an original read-only PE audit; cross-checked headers using LLVM.
 - Inspected a bounded entry-point window locally. Entry is in `.bind`, not
   `.text`; no gameplay function or compiler identity inferred from that alone.
-- Passed 38 infrastructure tests (including graph and value-dependency negative
+- Passed 46 infrastructure tests (including graph and value-dependency negative
   regressions) and 14 invented handle-contract cases with native
   AddressSanitizer/UndefinedBehaviorSanitizer. Compiled a freestanding i386 COFF
   ABI fixture and checked cdecl/stdcall symbol/stack conventions.

@@ -4,6 +4,15 @@ Owner: the sole authorized Bully decompilation task. No secondary driver, model
 server or background loop was started. Branch: `research/pc-baseline`.
 Remote: https://github.com/oh-ashen-one/bully-decompilation
 
+## Edge-verifier review correction
+
+The reviewer reproduced false RET fallthrough/JMP-as-CALL acceptance in 6962b77.
+The original false-positive receipt is retained; eight new regressions exercise
+the corrected typed-edge checker and main entrypoint. Revalidation confirms all
+five real paths / 1,933 entry edges and 186 callee edges. See
+evidence/edge-verifier-v2.json; historical static-call-paths.json is superseded
+for edge-validation confidence. No game execution or coverage promotion.
+
 ## Latest saved milestone: static call paths and value boundary
 
 All current artifacts are saved. Entry graph: 1,782 instruction starts / 7,921
@@ -21,7 +30,7 @@ This is a precise method limit, not a claim that all static research is exhauste
 Missing local model weights alone did not stop the structural work.
 
 See docs/STATIC_CALL_PATHS.md and evidence/static-call-paths.json for the method,
-limits, retained failures and deterministic edge checks. Current tests: 38 Python,
+limits, retained failures and deterministic edge checks. Current tests: 46 Python,
 14 native sanitizer C cases, deterministic i386 COFF; prior synthetic expression
 comparison remains 2,880. Game functions recovered/oracle-tested/matched: **0**.
 
