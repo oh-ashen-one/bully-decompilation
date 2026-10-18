@@ -8,5 +8,8 @@
   "coff_timestamp": 0,
   "complete_objects_equal_across_spaced_builds": true,
   "normalization": "none; compiler emitted zero timestamp using recorded flag",
-  "prior_failure": "Default timestamp changed; immediate same-second repeats were insufficient. See failures.json."
+  "prior_failure": "Default timestamp changed; immediate same-second repeats were insufficient. See failures.json.",
+  "current_qualification_schema_version": 2,
+  "current_python_tests": 22,
+  "current_qualification_repeated_identically": true
 }

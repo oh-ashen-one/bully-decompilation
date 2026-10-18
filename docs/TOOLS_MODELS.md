@@ -1,5 +1,10 @@
 # Tool and model checkpoint — 2026-10-18
 
+This records the initial limited inventory. The deeper follow-up in
+[SETUP_PROPOSAL.md](SETUP_PROPOSAL.md) confirms installed JDKs/Gradle, runtime
+versions, broken historical model paths, resource pressure, and exact proposals.
+Use that follow-up for setup decisions; nothing was installed or started.
+
 Read-only inventory was scoped to conventional installation locations, the
 configured LM Studio home pointer, the external model directory and the named
 LM Studio download backup. This was not a whole-disk search.

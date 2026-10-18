@@ -14,7 +14,7 @@ Host architecture is arm64; target architecture was read from PE headers.
 | Preferred image base | 0x00400000 | Runtime base not observed |
 | Entry RVA | 0x01cf32ed, inside executable `.bind` section | Not established as original gameplay entry |
 | Linker field | 8.0 | Suggests a toolchain family; not exact compiler proof |
-| COFF timestamp | 1228925566 (2008-12-10 11:12:46 UTC) | A header value, not authenticated build time |
+| COFF timestamp | 1228925566 (2008-12-10 16:12:46 UTC) | A header value, not authenticated build time |
 | Fixed file/product version | No version resource found by audit | Exact patch remains unknown |
 | Rich metadata | No Rich marker before PE header | No tool-build IDs recovered |
 | Debug directory | Size 0 | No PDB evidence from this directory |
@@ -38,6 +38,14 @@ The entry section has execute permission but no code-content flag. A 256-byte
 function boundaries. No behavior or protection-bypass claim follows. Raw output
 is local-only and keyed by target hash. Both successful decode and initial
 failure are retained as evidence.
+
+Review correction: the first wrapper used case-colliding `d.asm`/`D.asm` names
+on the host filesystem. Its receipts are preserved but those wrapper output
+paths did not independently retain both results. Earlier manually named local
+outputs were separate. The corrected `entry-audit-v2` uses `code-only` and
+`all-sections` names with a regression test; see `evidence/entry-audit-v2.json`.
+The UTC timestamp above is derived from the numeric value, correcting the prior
+mislabeling of LLVM's local-time display. This still does not authenticate build time.
 
 The installed copy may contain updates or modifications; no clean-depot or
 publisher-hash comparison has been made. Steam verification, patching, unpacking,

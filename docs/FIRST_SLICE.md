@@ -31,6 +31,13 @@ zero COFF timestamp and repeated complete objects are compared byte-for-byte.
 No post-build instruction or header normalization is used. This fixture-specific
 build option is not a hypothesis about the retail compiler flags.
 
+Review hardening: the current runner uses `-fno-sanitize-recover=all`, rejects
+native stderr even with exit zero, and retains stdout/stderr logs. An intentionally
+undefined synthetic signed-overflow probe must fail. Exact defined-symbol parsing
+rejects missing cdecl, missing stdcall and undefined-only symbols. The original
+receipt is retained as `evidence/qualification-initial.json`; it is not evidence
+that these negative failure paths were qualified before the fixes.
+
 ## Next target milestone
 
 1. Qualify an existing approved local model/analyzer using the synthetic fixture.

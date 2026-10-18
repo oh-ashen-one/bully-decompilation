@@ -1,0 +1,28 @@
+{
+  "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+  "window_bytes": 256,
+  "entry_rva": "0x1cf32ed",
+  "section": ".bind",
+  "results": [
+    {
+      "mode": "-d",
+      "output_file": "code-only.asm",
+      "exit_code": 0,
+      "decoded_lines": 0,
+      "raw_output_sha256": "eeb1b403d204b60361db20d455a382041896f48b26718acdf6240ebba284e6db"
+    },
+    {
+      "mode": "-D",
+      "output_file": "all-sections.asm",
+      "exit_code": 0,
+      "decoded_lines": 56,
+      "raw_output_sha256": "1b367b1c1a6f4d7c57115008d5f886d5cf76c8f8987dbfae4646321a3b3b83d0"
+    }
+  ],
+  "input_unchanged": true,
+  "executed": false,
+  "game_functions_recovered": 0,
+  "limitation": "linear decode only; function boundary and executed path unverified",
+  "distinct_output_files_verified": true,
+  "supersedes_output_storage_of": "entry-audit.json; legacy receipts retained"
+}

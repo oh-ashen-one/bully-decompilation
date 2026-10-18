@@ -25,6 +25,31 @@
       "id": "llvm-readobj-unavailable",
       "observation": "xcrun could not locate llvm-readobj in the installed Xcode toolchain.",
       "resolution": "Read the documented COFF timestamp field with Python struct; existing llvm-objdump and llvm-nm handled the other checks."
+    },
+    {
+      "id": "case-insensitive-audit-output-collision",
+      "observation": "Legacy d.asm/D.asm and stderr paths were confirmed to resolve to the same files on this Mac. Earlier receipts retained; separate manual outputs also remain local.",
+      "resolution": "New entry-audit-v2 uses code-only/all-sections names; two regressions verify casefold uniqueness and retained distinct contents. New raw hashes revalidated."
+    },
+    {
+      "id": "coff-timestamp-timezone",
+      "observation": "1228925566 was incorrectly rendered as 11:12:46 UTC from LLVM local-time display.",
+      "resolution": "Python timezone-aware UTC conversion gives 2008-12-10T16:12:46+00:00; docs corrected. Header timestamp remains unauthenticated."
+    },
+    {
+      "id": "sanitizer-recovery-and-stderr",
+      "observation": "Prior runner accepted exit-zero stderr and default UBSan could recover. Passing old handle cases did not qualify this failure path.",
+      "resolution": "Disable sanitizer recovery, reject native stderr, preserve command logs, test exit-zero diagnostics and an injected signed-overflow failure. Initial receipt retained separately."
+    },
+    {
+      "id": "cdecl-symbol-substring",
+      "observation": "Prior cdecl substring check also matched the stdcall name.",
+      "resolution": "Parse exact defined symbol tokens; regressions reject missing cdecl, missing stdcall and undefined-only cdecl."
+    },
+    {
+      "id": "clock-anchor-direct-call-negative",
+      "observation": "One GetTickCount import slot found, but no FF15 absolute-IAT patterns in initialized .text.",
+      "resolution": "Retain negative result; no function or no-use inference. Other encodings require separate analysis."
     }
   ]
 }

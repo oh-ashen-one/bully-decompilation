@@ -15,7 +15,12 @@
   "infrastructure": {
     "pe_audit_tests": 9,
     "synthetic_handle_cases": 14,
-    "bounded_entry_windows": 1
+    "bounded_entry_windows": 1,
+    "entry_audit_regressions": 2,
+    "qualification_regressions": 6,
+    "import_mapping_tests": 5,
+    "total_python_tests": 22,
+    "import_slots_mapped": 200
   },
   "counting_rule": "Only exact-target functions with reviewed boundaries enter the function ledger. Fixtures, address references and decoded windows are excluded.",
   "functions": []

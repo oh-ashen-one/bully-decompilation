@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+  "import_descriptors": 13,
+  "imported_slots": 200,
+  "named_imports": 195,
+  "ordinal_imports": 5,
+  "anchor": "KERNEL32.GetTickCount",
+  "anchor_slots": 1,
+  "candidate_byte_patterns": 0,
+  "candidate_instruction_boundaries_verified": false,
+  "recovered_game_functions": 0,
+  "original_oracle_tests": 0,
+  "input_unchanged": true,
+  "scan_bound": "initialized bytes of the single .text section",
+  "limitation": "FF 15 absolute-IAT patterns can occur inside data or instructions; candidates are unverified and not function coverage"
+}

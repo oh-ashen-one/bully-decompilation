@@ -17,9 +17,15 @@ outside this repository's scope.
 - Built an original read-only PE audit; cross-checked headers using LLVM.
 - Inspected a bounded entry-point window locally. Entry is in `.bind`, not
   `.text`; no gameplay function or compiler identity inferred from that alone.
-- Passed 9 PE audit tests and 14 invented handle-contract cases with native
+- Passed 22 infrastructure tests (9 PE, 5 import-map, 2 output-preservation,
+  6 qualification regressions) and 14 invented handle-contract cases with native
   AddressSanitizer/UndefinedBehaviorSanitizer. Compiled a freestanding i386 COFF
   ABI fixture and checked cdecl/stdcall symbol/stack conventions.
+- Mapped 200 import slots locally. A bounded direct-call encoding scan for one
+  clock API found no candidates; this negative result is not a no-use proof.
+- Checked actual analyzer/model paths and resources; existing JDK 21, Gradle and
+  llama.cpp are usable prerequisites. Exact installation/download options are
+  proposed in [setup decisions](docs/SETUP_PROPOSAL.md), not executed.
 
 **Recovered game functions: 0. Original-game differential tests: 0. Binary
 matches: 0.** The function denominator is not established for this executable.
@@ -28,6 +34,10 @@ The fixture is original test infrastructure, not a recovered Bully implementatio
 See [target evidence](docs/TARGET.md), [full-game scope and coverage](docs/COVERAGE.md),
 [first slice](docs/FIRST_SLICE.md), [tool/model status](docs/TOOLS_MODELS.md),
 [receipts](evidence/qualification.json), and [handoff](HANDOFF.md).
+
+Independent review corrections: fixed case-insensitive audit filename collisions,
+UTC timestamp rendering, sanitizer failure handling and exact symbol checks.
+Earlier receipts remain available; current evidence supersedes the affected claims.
 
 ## Reproduce safe qualification
 
@@ -45,6 +55,7 @@ For authorized local analysis of the exact owned executable:
 ```sh
 python3 tools/fingerprint.py "$BULLY_EXE" --output local-private/fingerprint.json
 python3 tools/audit_entry.py "$BULLY_EXE"
+python3 tools/map_imports.py "$BULLY_EXE"
 ```
 
 The fingerprint tool refuses overwrite; the entry audit refuses a different hash

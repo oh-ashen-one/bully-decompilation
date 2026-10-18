@@ -37,6 +37,11 @@ count is **unknown**. There is one binary header/import audit and one bounded
 entry window, neither a recovered function. No whole-game percentage is reported.
 `evidence/coverage.json` is the machine-readable ledger.
 
+Follow-up infrastructure evidence: 22 Python tests, including negative sanitizer
+and symbol/output-preservation regressions; 200 import slots mapped locally;
+zero direct-IAT-call patterns for one clock anchor in initialized `.text`.
+Import slots and byte patterns never enter the game-function denominator.
+
 Matching is the strongest code-recovery criterion but currently blocked by exact
 compiler/linker/runtime/SDK/options and suitable reference mapping. Behavioral
 agreement may be recorded separately while these are researched. It never gets

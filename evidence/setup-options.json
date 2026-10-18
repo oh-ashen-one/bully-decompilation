@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-18",
+  "executed": false,
+  "ghidra": {
+    "version": "12.1.4",
+    "tag": "Ghidra_12.1.4_build",
+    "commit": "8b6bbb857accdfa20dc5b2f5dea471178c2e9fbc",
+    "url": "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip",
+    "filename": "ghidra_12.1.4_PUBLIC_20260921.zip",
+    "download_bytes": 569649598,
+    "sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+    "installation_build_budget_gib": 4,
+    "initial_project_budget_gib": 1,
+    "existing_jdk": "Temurin 21.0.11+10 arm64",
+    "existing_gradle": "9.5.0",
+    "wrapper_version_not_downloaded": "9.7.1",
+    "native_build_required": "macOS ARM64",
+    "extra_dependencies": "unknown until offline-first build; stop and separately size any missing dependency"
+  },
+  "models": [
+    {
+      "repo": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF",
+      "revision": "13fb94bfda8c8cf22497dc57b78f391a9acb426a",
+      "filename": "qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+      "download_bytes": 4683073536,
+      "sha256": "509287f78cb4d4cf6b3843734733b914b2c158e43e22a7f4bf5e963800894d3c",
+      "disk_budget_gib": 6,
+      "rss_stop_budget_gib": 8,
+      "priority": "first synthetic qualification candidate",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/13fb94bfda8c8cf22497dc57b78f391a9acb426a/qwen2.5-coder-7b-instruct-q4_k_m.gguf"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-14B-Instruct-GGUF",
+      "revision": "d0a692ef765eefbf2fabb130b3cb2e8917e3d225",
+      "filename": "qwen2.5-coder-14b-instruct-q4_k_m.gguf",
+      "download_bytes": 8988110272,
+      "sha256": "c1e659736d89ac1065fb495330fb824d94001974a4bfa78e7270e43476a8d940",
+      "disk_budget_gib": 10,
+      "rss_stop_budget_gib": 14,
+      "priority": "only if separately approved after smaller candidate fails",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct-GGUF/resolve/d0a692ef765eefbf2fabb130b3cb2e8917e3d225/qwen2.5-coder-14b-instruct-q4_k_m.gguf"
+    }
+  ],
+  "model_run_budget": {
+    "runtime": "llama.cpp 0.4.0 build10809 commit5266f24da",
+    "cpu_threads": 4,
+    "gpu_layers": 0,
+    "device": "none",
+    "offline": true,
+    "context_tokens": 4096,
+    "max_output_tokens": 2048,
+    "timeout_seconds": 120,
+    "temperature": 0,
+    "seed": 1,
+    "synthetic_only": true,
+    "listeners": false
+  },
+  "limits": "Resource envelopes are proposed budgets, not measured performance or reserved capacity; no download or inference has occurred."
+}

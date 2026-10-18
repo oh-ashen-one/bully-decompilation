@@ -1,0 +1,24 @@
+{
+  "captured_utc": "2026-10-18T21:17:25.256920+00:00",
+  "memory": {
+    "page_size": 16384,
+    "free_bytes": 132052566016,
+    "compressed_bytes": 0,
+    "wired_bytes": 9051193344,
+    "swapins_since_boot": 0,
+    "swapouts_since_boot": 0
+  },
+  "system_available_bytes": 405120835584,
+  "external_available_bytes": 495690711040,
+  "cpu_summary": [
+    "Load Avg: 2.95, 3.83, 3.72 ",
+    "CPU usage: 3.73% user, 4.83% sys, 91.42% idle "
+  ],
+  "relevant_process_names": [],
+  "pressure_query_free_percent": 96,
+  "physical_memory_bytes": 274877906944,
+  "swap_used_bytes": 0,
+  "physical_cpus": 32,
+  "logical_cpus": 32,
+  "scope": "aggregate read-only snapshot; no resource reservation or process management"
+}

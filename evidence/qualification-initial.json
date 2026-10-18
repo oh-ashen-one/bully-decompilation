@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "scope": "original synthetic fixtures only; no original-game parity",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "native_flags": [
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fsanitize=address,undefined",
+    "tests/synthetic_handle_test.c",
+    "-o",
+    "build/synthetic_handle_test"
+  ],
+  "coff_flags": [
+    "-target",
+    "i686-pc-windows-msvc",
+    "-std=c11",
+    "-O2",
+    "-ffreestanding",
+    "-fno-stack-protector",
+    "-mno-incremental-linker-compatible",
+    "-c",
+    "src/synthetic_handle.c",
+    "-o",
+    "build/synthetic_handle.obj"
+  ],
+  "native_result": "synthetic handle contract: 14 cases passed (two wrappers)",
+  "fingerprint_tests": "test_all_header_truncations (test_fingerprint.FingerprintTests.test_all_header_truncations) ... ok\ntest_ambiguous_mapping (test_fingerprint.FingerprintTests.test_ambiguous_mapping) ... ok\ntest_bad_directory_count (test_fingerprint.FingerprintTests.test_bad_directory_count) ... ok\ntest_basic (test_fingerprint.FingerprintTests.test_basic) ... ok\ntest_import_and_terminator (test_fingerprint.FingerprintTests.test_import_and_terminator) ... ok\ntest_not_x86 (test_fingerprint.FingerprintTests.test_not_x86) ... ok\ntest_unterminated_name (test_fingerprint.FingerprintTests.test_unterminated_name) ... ok\ntest_version_resource (test_fingerprint.FingerprintTests.test_version_resource) ... ok\ntest_virtual_tail_and_crossing (test_fingerprint.FingerprintTests.test_virtual_tail_and_crossing) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests (timing omitted)\n\nOK",
+  "coff_sha256": "ab00b31b6c5cc67210935ebdf06643b75aa5b14a7692436adcf3ccc777d25549",
+  "coff_timestamp": 0,
+  "x86_coff_compiled": true,
+  "x86_executed": false,
+  "stdcall_symbol_and_stack_cleanup_verified": true,
+  "original_game_oracle_tests": 0,
+  "binary_matched_game_functions": 0
+}

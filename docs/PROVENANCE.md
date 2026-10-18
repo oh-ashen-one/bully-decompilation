@@ -14,7 +14,7 @@ in the private provenance record rather than public documentation.
 
 Public original files: PE metadata reader; synthetic PE fixtures; invented C
 handle/ABI fixture; tests and qualification runner; exact-build entry audit
-driver; documentation and evidence schemas. These were written for this project.
+driver; bounded import-table mapper; documentation and evidence schemas. These were written for this project.
 No bully-re implementation, generated skeleton or proprietary decompiler text
 was copied or adapted. No original source recovery claim is made.
 
@@ -24,6 +24,12 @@ was copied or adapted. No original source recovery claim is made.
   Verified repository default branch `research-skill`; read the pinned skill,
   decision guide, Bully, local/cloud and validation references. Method reference;
   no code copied.
+- Official [Ghidra 12.1.4 release](https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build)
+  and pinned setup/native-build documentation: installation proposal only, no
+  tool archive or source imported into this repository.
+- Official Qwen [7B](https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF)
+  and [14B](https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct-GGUF) model cards
+  and metadata: exact optional download proposals only; no weights downloaded.
 - [Microsoft PE/COFF specification](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format).
   Public format reference for independently written metadata reader.
 - [LiquidSnake0/bully-re at dce485b](https://github.com/LiquidSnake0/bully-re/tree/dce485bf29117edca4d04b802a169f0a909da432).
