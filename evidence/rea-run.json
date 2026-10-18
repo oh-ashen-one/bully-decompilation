@@ -1,0 +1,20 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "deadline_seconds": 210,
+  "elapsed_seconds": 12.17,
+  "fixture_sha256": "bfae632830f91dc73b91c72e7cd9cec985ba4c1ceaa807ce94eaad153b082f5a",
+  "configured_heap": "512M",
+  "cpu_limit_exposed_by_rea": false,
+  "heap_measured": false,
+  "target_executed": false,
+  "original_game_input": false,
+  "pseudocode_identical_to_initial_success": true,
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "raw_loader_compiler_spec": "gcc",
+  "source_and_result_stay_local": true
+}

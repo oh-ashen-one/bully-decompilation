@@ -50,6 +50,26 @@
       "id": "clock-anchor-direct-call-negative",
       "observation": "One GetTickCount import slot found, but no FF15 absolute-IAT patterns in initialized .text.",
       "resolution": "Retain negative result; no function or no-use inference. Other encodings require separate analysis."
+    },
+    {
+      "id": "npm-identical-empty-configs",
+      "observation": "npm rejected using /dev/null for both user and global config.",
+      "resolution": "Distinct empty task-owned config files; install succeeded with lifecycle scripts and optional dependencies disabled."
+    },
+    {
+      "id": "rea-swift-sandbox-cache",
+      "observation": "First REA qualification attempted Swift module cache outside writable task scope; nice priority change also denied.",
+      "resolution": "REA_DARWIN_MODULE_CACHE_PATH now selects task-owned cache; removed nice wrapper. Failed raw diagnostics retained locally."
+    },
+    {
+      "id": "rea-java-spawn-sandbox",
+      "observation": "Second synthetic REA attempt failed Java spawn with EPERM.",
+      "resolution": "Approved bounded execution outside the shell sandbox succeeded. No host security settings changed."
+    },
+    {
+      "id": "ghidra-instruction-span-boundary",
+      "observation": "First retail Ghidra audit found an instruction that started inside its 256-byte restriction but extended outside it. The audit guard rejected it; Ghidra still exited zero.",
+      "resolution": "Reserve final 14 bytes from possible starts, assert complete spans, require summary file as well as process exit success. Corrected script requalified on synthetic input and retail pass completed. Original failed logs preserved."
     }
   ]
 }

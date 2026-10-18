@@ -13,3 +13,10 @@ does not satisfy a license when copying code. Review any future reuse file by fi
 
 Tools run on the host (Clang/LLVM, Python, CrossOver installation context,
 LM Studio/llama.cpp discovery) are not distributed in this repository.
+
+Approved local analyzer tools: [Ghidra](https://github.com/NationalSecurityAgency/ghidra)
+12.1.4 (Apache-2.0 project plus bundled component notices) and
+[REA](https://github.com/morluto/rea) 6.7.0 (MIT, copyright 2026 morluto).
+Their distributions, source review copies and npm dependencies remain ignored
+and local. This repository does not relicense or distribute them. Exact pins are
+in `evidence/analyzer-setup.json`. Our Java/Python audit scripts are original.

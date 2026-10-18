@@ -23,9 +23,12 @@ outside this repository's scope.
   ABI fixture and checked cdecl/stdcall symbol/stack conventions.
 - Mapped 200 import slots locally. A bounded direct-call encoding scan for one
   clock API found no candidates; this negative result is not a no-use proof.
-- Checked actual analyzer/model paths and resources; existing JDK 21, Gradle and
-  llama.cpp are usable prerequisites. Exact installation/download options are
-  proposed in [setup decisions](docs/SETUP_PROPOSAL.md), not executed.
+- Installed approved task-local Ghidra 12.1.4 and REA 6.7.0; built the ARM64 native
+  decompiler. The reviewed synthetic pseudocode passed 2,880 boundary comparisons.
+- Completed a Ghidra entry audit: 50 reachable instructions, 229 decoded bytes,
+  one flow leaving the 256-byte window. No complete function boundary established.
+  See [analyzer qualification](docs/ANALYZER_QUALIFICATION.md) for limits and failures.
+- Local model weights remain unavailable; no model download or paid API started.
 
 **Recovered game functions: 0. Original-game differential tests: 0. Binary
 matches: 0.** The function denominator is not established for this executable.

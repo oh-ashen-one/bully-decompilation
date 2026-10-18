@@ -3,7 +3,9 @@
 This records the initial limited inventory. The deeper follow-up in
 [SETUP_PROPOSAL.md](SETUP_PROPOSAL.md) confirms installed JDKs/Gradle, runtime
 versions, broken historical model paths, resource pressure, and exact proposals.
-Use that follow-up for setup decisions; nothing was installed or started.
+Ghidra and REA were subsequently approved, installed and qualified; see
+[ANALYZER_QUALIFICATION.md](ANALYZER_QUALIFICATION.md) for the current results.
+The local-model discovery limitations below remain unresolved.
 
 Read-only inventory was scoped to conventional installation locations, the
 configured LM Studio home pointer, the external model directory and the named
@@ -15,7 +17,7 @@ LM Studio download backup. This was not a whole-disk search.
 | Python | Python 3 available; standard library audit runs | No package installation needed |
 | Compiler/disassembler | Apple Clang/LLVM 21.0.0 | Qualified native fixture and i386 COFF inspection |
 | Historical compiler | Exact original compiler/SDK/CRT not identified or qualified | Research evidence first; do not download proprietary toolchains indiscriminately |
-| Ghidra/rizin/radare2/IDA | No installation located in inspected normal tool paths | Existing approved analyzer location or a separately reviewed setup decision |
+| Ghidra / REA | Task-local Ghidra 12.1.4 with built ARM64 decompiler; REA 6.7.0 pinned release CLI | Synthetic decompilation qualified; bounded retail entry audited; no persistent MCP registration |
 | Python PE/emulation packages | pefile, capstone, unicorn absent from inspected Python | Standard-library audit and LLVM used instead |
 | llama.cpp | Homebrew installation 0.4.0 and CLI present | No weights loaded, inference or server started |
 | LM Studio | Application and CLI present; configured home missing | `lms ls --json` failed; `lms ps` did not run after that failure |

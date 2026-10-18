@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "target_sha256": "3d0d99d1cd931b98cc0603e83e8fdee091e75059ee2c88cc2eb34f8396ea710e",
+  "window_start_va": "0x020f32ed",
+  "window_bytes": 256,
+  "instruction_start_budget_bytes": 242,
+  "reserved_tail_bytes": 14,
+  "auto_analysis": false,
+  "disassembly_applied": true,
+  "reachable_instruction_count": 21,
+  "decoded_bytes": 56,
+  "flow_edges_outside_window": 0,
+  "terminal_instructions": 1,
+  "call_instructions": 0,
+  "analysis_function_records": 0,
+  "language_id": "x86:LE:32:default",
+  "loader_compiler_spec": "windows",
+  "observed_max_heap_bytes": 2147483648,
+  "jvm_reported_processors": 2,
+  "game_functions_recovered": 0,
+  "complete_function_boundary_established": false,
+  "original_game_executed": false
+}

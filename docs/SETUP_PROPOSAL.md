@@ -1,4 +1,10 @@
-# Bounded analyzer/model setup proposal — not yet executed
+# Bounded analyzer/model setup proposal — historical decision record
+
+**Update:** the user approved Ghidra and REA on 2026-10-18. Installation and
+qualification are recorded in [ANALYZER_QUALIFICATION.md](ANALYZER_QUALIFICATION.md).
+The official Makefile built the required ARM64 decompiler with existing tools,
+so the proposed Gradle path was unnecessary. Option B remains unapproved and
+unexecuted. The text below preserves the proposal as it was prepared.
 
 Checked 2026-10-18. The full original PC game remains the recovery goal. This
 proposal only enables the next verifiable analysis step. No installation, model
@@ -125,5 +131,5 @@ ceilings above. This is sufficient to move beyond metadata without a local LLM.
 or subscription is involved. Downloads and starts were explicitly held pending
 the user's setup decision; the skill itself does not impose this extra approval.
 
-If an existing approved installation/weights path is supplied instead, inspect
-that path first and revise the proposal. No actions A/B have occurred.
+At proposal time neither action had occurred. The update above supersedes that
+status for A; B still requires a separate model decision.

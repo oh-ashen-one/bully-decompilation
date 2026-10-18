@@ -31,6 +31,12 @@ zero COFF timestamp and repeated complete objects are compared byte-for-byte.
 No post-build instruction or header normalization is used. This fixture-specific
 build option is not a hypothesis about the retail compiler flags.
 
+Analyzer milestone: approved Ghidra 12.1.4/REA 6.7.0 now decompile the original
+fixture, with 2,880 native ARM64 comparisons passing on the reviewed expression.
+REA raw loading selected a generic GCC convention; this is not Windows ABI
+qualification. The bounded retail entry pass has an outgoing flow and no complete
+function boundary. See [the detailed result](ANALYZER_QUALIFICATION.md).
+
 Review hardening: the current runner uses `-fno-sanitize-recover=all`, rejects
 native stderr even with exit zero, and retains stdout/stderr logs. An intentionally
 undefined synthetic signed-overflow probe must fail. Exact defined-symbol parsing

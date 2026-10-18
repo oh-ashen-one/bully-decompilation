@@ -1,0 +1,17 @@
+{
+  "measurement": "du -sk allocated storage; includes earlier private evidence",
+  "paths_bytes": {
+    "local-private/tools": 1864462336,
+    "local-private/rea-swift-cache": 30629888,
+    "local-private/rea-reproducible-run": 30650368,
+    "local-private/ghidra-retail-entry-v1": 282624,
+    "local-private/ghidra-retail-entry-v2": 290816,
+    "local-private/ghidra-synthetic-entry": 282624,
+    "local-private/ghidra-synthetic-entry-v2": 282624
+  },
+  "all_local_private_bytes": 1927303168,
+  "approved_setup_and_analysis_ceiling_bytes": 5368709120,
+  "within_ceiling": true,
+  "available_volume_bytes": 387072000000,
+  "total_process_rss_measured": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "authorization": "Explicit user approval for Ghidra and REA; model weights not included.",
+  "ghidra": {
+    "version": "12.1.4",
+    "release_tag": "Ghidra_12.1.4_build",
+    "release_commit": "8b6bbb857accdfa20dc5b2f5dea471178c2e9fbc",
+    "archive_bytes": 569649598,
+    "archive_sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+    "extracted_bytes": 905891804,
+    "native_architecture": "Mach-O arm64",
+    "native_sha256": "0bc01f009db2ca184011ce65f6b27f1469d0a3eda504e49e6055dc5865bb014b",
+    "native_build": {
+      "command": [
+        "make",
+        "-j2",
+        "ghidra_opt",
+        "ARCH_TYPE=-arch arm64",
+        "OSDIR=mac_arm_64",
+        "ADDITIONAL_FLAGS=-w"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 51.82,
+      "timeout_seconds": 600,
+      "parallel_jobs": 2
+    },
+    "license": "Apache-2.0 project; bundled component notices retained locally"
+  },
+  "rea": {
+    "version": "6.7.0",
+    "source_repository": "https://github.com/morluto/rea",
+    "release_source_commit": "27dc42d10249f0410904a75c0997842eb03b931c",
+    "initial_main_review_commit": "32f0e5120966be59d17a1e092353816c76a9c5e2",
+    "npm_archive_bytes": 6276963,
+    "npm_sha512": "ca1231da2a096184f50bfb4e35f61e8ad0ba2e19ca98287e6704543a062e85273bdf794686492def7ce1ba0f5698b831a0c74abaa218182a017c3e1f5e43a117",
+    "provenance": "npm HTTPS attestation payload reports release commit; decoded and digest compared, signature chain not independently verified",
+    "packaged_bridge_files_compared": 26,
+    "packaged_bridge_files_identical_to_release_source": 26,
+    "installed_dependency_packages_including_root": 147,
+    "lifecycle_scripts_executed": false,
+    "optional_dependencies_installed": false,
+    "frida_installed": false,
+    "license": "MIT",
+    "integration": "task-local CLI only; no MCP profile registration",
+    "transport": "upstream local Unix-domain bridge for Ghidra; no TCP listener configured"
+  },
+  "java": {
+    "version": "Temurin 21.0.11+10",
+    "architecture": "arm64"
+  },
+  "node": "26.8.2",
+  "npm": "11.19.1",
+  "qualified_scope": "Synthetic x86 raw decompilation and native arm64 expression comparison; bounded retail entry disassembly only",
+  "model_weights_downloaded": false,
+  "local_model_inference_started": false,
+  "paid_api_started": false,
+  "game_executed": false,
+  "security_settings_changed": false,
+  "global_profile_changed": false
+}
