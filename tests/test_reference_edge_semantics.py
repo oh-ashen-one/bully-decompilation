@@ -47,12 +47,30 @@ class ReferenceEdgeSemanticsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             verifier.validate_call_path([0x1000],0x1000,0x1000,0x1000,decoded,{(0x1000,0x1000,'call')})
 
-    def test_malformed_edges_and_unsupported_transfers_fail_closed(self):
+    def test_malformed_edges_and_enumerated_transfers_are_rejected(self):
         for edge in [None,{},dict(kind='jump',**{'from':'1000','to':'1001'}),
                      dict(kind='call',**{'from':1000,'to':'1001'}),
                      dict(kind='call',**{'from':'1000','to':'100000000'})]:
             with self.subTest(edge=edge),self.assertRaises(ValueError):verifier.edge_fields(edge)
         for raw in ('cc','cd 80','f4','0f 0b','0f 34','ea 00 00 00 00 00 00'):
+            code=bytes.fromhex(raw)
+            with self.subTest(raw=raw),self.assertRaises(ValueError):
+                verifier.validate_edge(0x1000,0x1000+len(code),'fallthrough',code)
+
+    def test_ud1_has_no_fallthrough(self):
+        for raw in ('0f b9 c0','66 0f b9 c0','2e 0f b9 00'):
+            code=bytes.fromhex(raw)
+            with self.subTest(raw=raw),self.assertRaises(ValueError):
+                verifier.validate_edge(0x1000,0x1000+len(code),'fallthrough',code)
+
+    def test_ud0_has_no_fallthrough(self):
+        for raw in ('0f ff c0','66 0f ff c0','2e 0f ff 00'):
+            code=bytes.fromhex(raw)
+            with self.subTest(raw=raw),self.assertRaises(ValueError):
+                verifier.validate_edge(0x1000,0x1000+len(code),'fallthrough',code)
+
+    def test_rsm_has_no_fallthrough(self):
+        for raw in ('0f aa','66 0f aa','2e 0f aa'):
             code=bytes.fromhex(raw)
             with self.subTest(raw=raw),self.assertRaises(ValueError):
                 verifier.validate_edge(0x1000,0x1000+len(code),'fallthrough',code)

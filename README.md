@@ -6,7 +6,7 @@ It is early research, not a playable reconstruction or a completed decompilation
 The separate [bully-remake](https://github.com/oh-ashen-one/bully-remake) project is
 outside this repository's scope.
 
-## Verified checkpoint — 2026-10-18
+## Verified checkpoint — 2026-10-19
 
 - Located the owned Steam PC installation under CrossOver; inspected read-only.
 - Fingerprinted `Bully.exe`: SHA-256
@@ -17,7 +17,7 @@ outside this repository's scope.
 - Built an original read-only PE audit; cross-checked headers using LLVM.
 - Inspected a bounded entry-point window locally. Entry is in `.bind`, not
   `.text`; no gameplay function or compiler identity inferred from that alone.
-- Passed 46 infrastructure tests (including graph and value-dependency negative
+- Passed 49 infrastructure tests (including graph and value-dependency negative
   regressions) and 14 invented handle-contract cases with native
   AddressSanitizer/UndefinedBehaviorSanitizer. Compiled a freestanding i386 COFF
   ABI fixture and checked cdecl/stdcall symbol/stack conventions.

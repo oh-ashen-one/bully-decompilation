@@ -1,8 +1,26 @@
-# Bully PC recovery handoff — 2026-10-18
+# Bully PC recovery handoff — 2026-10-19
 
 Owner: the sole authorized Bully decompilation task. No secondary driver, model
 server or background loop was started. Branch: `research/pc-baseline`.
 Remote: https://github.com/oh-ashen-one/bully-decompilation
+
+## Follow-up checker and pending-runtime clarifications
+
+UD0/UD1/RSM were reproduced as false ordinary fallthroughs, then explicitly
+rejected. Nine base/prefixed cases across three new tests pass. Saved decoded
+sets contain none of these encodings; five paths / 1,933 entry edges and 186
+callee edges revalidate. Current full native-host qualification: 49 Python tests,
+14 C sanitizer cases and deterministic i386 COFF. Receipt edge-verifier-v3.json
+supersedes v2's universal fail-closed wording: the classifier is enumerated and
+retains an ordinary fallback, not a complete instruction allowlist.
+
+Runtime approval still pending. The proposal now counts attributable native
+cache/temp/integration writes in the same 16 GiB ceiling; requires watchdog and
+write-accounting qualification; sets a 0.5-second sample target / 1.0-second
+maximum gap; and orders owner sign-out before launcher shutdown. Observation is
+120 seconds plus up to 60 seconds total shutdown grace (180-second maximum game
+lifetime). If an owner reply grants narrower limits, raise the discrepancy; never
+infer expansion. No bottle, runtime download, launch or configuration change.
 
 ## Read-only isolated-runtime proposal ready
 
@@ -49,7 +67,7 @@ This is a precise method limit, not a claim that all static research is exhauste
 Missing local model weights alone did not stop the structural work.
 
 See docs/STATIC_CALL_PATHS.md and evidence/static-call-paths.json for the method,
-limits, retained failures and deterministic edge checks. Current tests: 46 Python,
+limits, retained failures and deterministic edge checks. Current tests: 49 Python,
 14 native sanitizer C cases, deterministic i386 COFF; prior synthetic expression
 comparison remains 2,880. Game functions recovered/oracle-tested/matched: **0**.
 

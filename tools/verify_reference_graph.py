@@ -20,8 +20,10 @@ ROOT=Path(__file__).resolve().parent.parent
 def instruction_flow(code):
     """Classify control-transfer encodings in LLVM-decoded 32-bit x86 instructions.
 
-    System/trap and unhandled far transfers are not treated as ordinary fallthrough.
-    This classifies flow only; LLVM remains responsible for instruction decoding.
+    Enumerated system/trap and far transfers below reject ordinary fallthrough.
+    Other encodings fall back to ordinary: this is not a supported-instruction
+    allowlist or a guarantee that every unsupported transfer is rejected.
+    LLVM remains responsible for instruction decoding.
     """
     if not code or len(code)>15:raise ValueError('invalid decoded instruction length')
     offset=0
@@ -38,7 +40,7 @@ def instruction_flow(code):
         if extension in (4,5):return 'indirect-jump'
     if op in (0xc2,0xc3,0xca,0xcb,0xcf):return 'return'
     if op in (0xea,0x9a,0xf4,0xcc,0xcd,0xce,0xf1):return 'unsupported-transfer'
-    if len(tail)>1 and ((op==0x0f and tail[1] in (0x05,0x07,0x0b,0x34,0x35)) or
+    if len(tail)>1 and ((op==0x0f and tail[1] in (0x05,0x07,0x0b,0x34,0x35,0xaa,0xb9,0xff)) or
                        (op in (0xc6,0xc7) and tail[1]==0xf8)):
         return 'unsupported-transfer'
     return 'ordinary'
@@ -148,8 +150,10 @@ def main():
                         'all_path_edges_independently_checked':True,'actual_execution_proven':False})
     if hashlib.sha256(a.input.read_bytes()).hexdigest()!=TARGET:raise ValueError('input changed')
     receipt={'target_sha256':TARGET,'instruction_starts_checked':len(addresses),
-             'supported_edges':len(supported),'unsupported_edge_encodings':0,
+             'supported_edges':len(supported),'recognized_disallowed_edge_encodings':0,
              'opcode_edge_kinds_verified':True,'path_traversal_excludes_call_edges':True,
+             'classifier_uses_complete_instruction_allowlist':False,
+             'classifier_scope':'Enumerated transfer/trap encodings; other LLVM-decoded encodings use ordinary fallback. No universal unsupported-transfer rejection claim.',
              'verifier_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
              'call_paths_checked':len(checked),'paths':checked,'input_unchanged':True,
              'conditional_feasibility_evaluated':False,'call_returns_assumed':True,

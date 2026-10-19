@@ -14,12 +14,29 @@ Those earlier receipts alone do not justify opcode-level path confidence.
 
 The corrected checker validates each edge kind against its control-transfer
 opcode, forbids fallthrough after unconditional transfers/returns, rejects
-unsupported/malformed edges, retains edge kinds, and requires a real direct CALL
+malformed edges and its explicitly enumerated disallowed transfer encodings,
+retains edge kinds, and requires a real direct CALL
 at each endpoint. Eight new regressions include the actual main-entry reproducer.
 The saved real entry graph revalidates all 1,933 edges and five paths; candidate 2
 revalidates 186 edges. Current receipt:
-[edge-verifier-v2.json](../evidence/edge-verifier-v2.json). The full suite is now 46
+[edge-verifier-v2.json](../evidence/edge-verifier-v2.json). That checkpoint had 46
 Python tests; runtime/semantic coverage remains unchanged.
+
+## Follow-up: UD0, UD1 and RSM
+
+A narrower review found UD0, UD1 and RSM were falling through the classifier's
+ordinary default. Synthetic false acceptances are retained. The three encodings
+are now explicitly rejected, with three new test methods covering nine base and
+prefixed cases. They do not occur in the inspected saved entry/callee graphs or
+the two earlier leaf linear decodes. All five paths / 1,933 entry edges and 186
+callee edges revalidate; the full native-host suite passes 49 Python tests.
+See [edge-verifier-v3.json](../evidence/edge-verifier-v3.json).
+
+The classifier is an enumerated control-transfer check, not a complete supported
+instruction allowlist. Other LLVM-decoded instructions fall back to ordinary.
+Accordingly, the earlier universal unsupported-transfer fail-closed wording is
+withdrawn; only the documented/tested rejection cases are claimed. Old receipts
+are preserved, with this qualification superseding their broader wording.
 
 ## Independently checked structure
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-18",
+  "as_of": "2026-10-19",
   "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
   "target_function_denominator": null,
   "game_functions": {
@@ -19,14 +19,14 @@
     "entry_audit_regressions": 2,
     "qualification_regressions": 6,
     "import_mapping_tests": 5,
-    "total_python_tests": 46,
+    "total_python_tests": 49,
     "import_slots_mapped": 200,
     "analyzer_gate_regressions": 5,
     "rea_synthetic_boundary_combinations": 2880,
     "reference_graph_regressions": 5,
     "value_dependency_regressions": 6,
     "static_entry_call_paths_checked": 5,
-    "edge_semantics_regressions": 8
+    "edge_semantics_regressions": 11
   },
   "counting_rule": "Only exact-target functions with reviewed boundaries enter the function ledger. Fixtures, address references and decoded windows are excluded.",
   "functions": [],

@@ -27,7 +27,9 @@ guarantee. [Vendor release history](https://www.codeweavers.com/crossover/change
 
 Approve creation of one task-owned Windows 10 64-bit bottle, one ordinary copy
 of the owned game directory, normal official launcher/dependency setup, and
-**one uninstrumented startup/menu attempt of at most 120 seconds**. Reserve
+**one uninstrumented startup/menu observation of at most 120 seconds**, followed
+by **up to 60 seconds of shutdown grace** (up to 180 seconds from game creation
+to forced task shutdown, not a 120-second process-lifetime guarantee). Reserve
 **16 GiB additional disk**, **2 GiB maximum new downloads**, **8 GiB aggregate
 process RSS**, and one renderer slot. No purchase, subscription, model download,
 existing-bottle modification, debugger attachment or binary patch is included.
@@ -36,6 +38,9 @@ The concrete destination would be `local-private/runtime-baseline-v1/`, with
 separate `bottles/bully-reference-v1`, `fresh-user`, `logs`, and `receipts`
 directories. This is additional to the existing 5 GiB analyzer budget (21 GiB combined ceiling). The path
 does not exist and nothing has been staged there. Refuse an existing destination.
+These clarified time/accounting terms remain approval-pending. If an owner reply
+approves a strict 120-second lifetime or a narrower disk scope, surface the
+difference before proceeding; do not infer an expanded allowance.
 
 ### Isolation and input preparation
 
@@ -107,7 +112,7 @@ assumed installed or silently added to this approval.
 | Existing whole bottle, metadata-only count / 12 symlinks not followed | 9,540,374,360 bytes (8.89 GiB) |
 | Whole-bottle clone | Not proposed |
 | Expected fresh game + Steam + prefix/dependencies | Approximately 8–12 GiB; estimate, not measured |
-| Additional task-directory ceiling including downloads/logs | 16 GiB |
+| Additional total write-growth ceiling, task directory plus attributed native outputs | 16 GiB |
 | New download ceiling; stop before a game redownload | 2 GiB |
 | Available disk at inspection | 373,145,600,000 bytes (347.52 GiB) |
 
@@ -116,18 +121,37 @@ client size and temporary installer expansion make the estimate uncertain. Count
 new downloaded payload using installer-reported totals and task download files;
 pause if the amount cannot be bounded. This is not a system-wide network cap.
 
+The 16 GiB ceiling also includes this task's native CrossOver cache/temp files,
+installer downloads, launcher caches, generated app integration and receipts
+outside the bottle. Before launch, inventory and baseline these destinations
+during synthetic setup, use a task-specific TMPDIR where supported, and measure
+the sum of attributable growth plus the task tree. Suppress only this bottle's
+optional menu/association integration; do not change global CrossOver settings.
+Do not assume all writes are inside WINEPREFIX or delete a shared cache. If native
+writes cannot be identified/accounted for without inspecting unrelated private
+contents, the environment is not ready and the game remains unlaunched. The same
+ceiling applies; this clarification adds no disk allowance.
+
 Before any real run, qualify a task-owned watchdog on original synthetic child
-processes. Track launcher descendants by PID plus creation time and fresh-bottle
+processes, including reparenting, over-limit, stalled-sampler and shutdown cases.
+Do not launch the game until those checks and native-write accounting succeed.
+Track launcher descendants by PID plus creation time and fresh-bottle
 identity; Wine helpers can reparent, so lineage alone is insufficient. Poll at
-most once per second. Stop this task's run if aggregate RSS exceeds 8 GiB, task
-storage reaches 16 GiB, or ownership cannot be established. These are monitoring
+0.5-second target intervals with a **1.0-second maximum permitted gap** between
+successful process/memory samples. A detected larger gap aborts the run rather
+than claiming continuous coverage. Stop this task's run if aggregate RSS exceeds
+8 GiB, total attributed write growth reaches 16 GiB, or ownership cannot be
+established. These are monitoring
 stop thresholds, not kernel-enforced reservations. No hard CPU quota is claimed;
 start the launcher at lowered scheduling priority and stop if the owned family
 exceeds 400% CPU for ten consecutive seconds. Do not change system scheduling.
 
 Bound active installation work to 20 minutes, pausing automation for owner login
-or agreement decisions. The game timer starts at process creation and stops at
-120 seconds. Allow one attempt; a crash, timeout, hash change or unresolved
+or agreement decisions. The observation timer starts at game process creation;
+at 120 seconds stop observations and begin shutdown. The separate 60-second grace
+is for exit/sign-out/termination, not further observation or another attempt.
+Monitor ownership/memory/disk throughout the grace; total game lifetime must not
+exceed 180 seconds. Allow one attempt; a crash, timeout, hash change or unresolved
 permission ends it. Use the fresh bottle's default graphics backend, record it,
 and do not install graphics overrides or edit the executable. Request 1280×720
 windowed only if offered by the game's normal menu; otherwise record the actual
@@ -146,12 +170,15 @@ memory dumps. Limit diagnostic logs to 10 MiB; overflow stops capture/run. At
 most one game-window-only menu image may remain private if approved; no whole
 desktop capture or public game assets.
 
-Try the game's normal Quit first. If it fails, signal only verified task-owned
-processes, wait up to 60 seconds, and use force termination only for an owned
-process still stuck. Never invoke a global Wine/Steam kill command or touch the
-production bottle. Verify zero surviving task processes and unchanged source
-executable hash, save the minimized receipt, then have the owner sign out of the
-fresh launcher normally. Remove only the newly created disposable environment
+Try the game's normal Quit first; then have the owner sign out of the fresh Steam
+and any authorized launcher **before** shutting down their processes. Complete
+that sequence within the same 60-second grace. If normal exit fails, signal only
+verified task-owned processes and use the remaining grace for termination; force
+termination at its deadline only for owned processes still stuck. A stalled
+sign-out is recorded as unconfirmed, never falsely reported successful. Never
+invoke a global Wine/Steam kill command or touch the production bottle. Verify
+zero surviving task processes and unchanged source executable hash, then save
+the minimized receipt. Remove only the newly created disposable environment
 after the receipt is retained; do not archive authentication state. Preserve
 existing analysis evidence and all production files.
 

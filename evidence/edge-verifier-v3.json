@@ -1,0 +1,132 @@
+{
+  "supersedes": "Universal fail-closed wording in edge-verifier-v2.json; prior receipts remain historical.",
+  "preserved_old_synthetic_false_acceptances": {
+    "synthetic_only": true,
+    "instructions_executed": false,
+    "prior_verifier_sha256": "4e6a5fccc01e852f9f4379d55d30f2122f3739fcc94d3da37317c70ba64c829b",
+    "known_false_acceptances": [
+      {
+        "instruction": "UD1",
+        "invented_bytes": "0f b9 c0",
+        "old_classification": "ordinary",
+        "old_fallthrough_accepted": true
+      },
+      {
+        "instruction": "UD0",
+        "invented_bytes": "0f ff c0",
+        "old_classification": "ordinary",
+        "old_fallthrough_accepted": true
+      },
+      {
+        "instruction": "RSM",
+        "invented_bytes": "0f aa",
+        "old_classification": "ordinary",
+        "old_fallthrough_accepted": true
+      }
+    ]
+  },
+  "saved_decoded_set_inspection": [
+    {
+      "scope": "entry",
+      "decoded_instructions_examined": 1782,
+      "recognized_encoding_counts": {
+        "UD0": 0,
+        "UD1": 0,
+        "RSM": 0
+      }
+    },
+    {
+      "scope": "callee_two",
+      "decoded_instructions_examined": 167,
+      "recognized_encoding_counts": {
+        "UD0": 0,
+        "UD1": 0,
+        "RSM": 0
+      }
+    },
+    {
+      "scope": "two_previous_leaf_linear_decodes",
+      "decoded_instructions_examined": 79,
+      "recognized_encoding_counts": {
+        "UD0": 0,
+        "UD1": 0,
+        "RSM": 0
+      }
+    }
+  ],
+  "revalidated_entry": {
+    "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+    "instruction_starts_checked": 1782,
+    "supported_edges": 1933,
+    "recognized_disallowed_edge_encodings": 0,
+    "opcode_edge_kinds_verified": true,
+    "path_traversal_excludes_call_edges": true,
+    "classifier_uses_complete_instruction_allowlist": false,
+    "classifier_scope": "Enumerated transfer/trap encodings; other LLVM-decoded encodings use ordinary fallback. No universal unsupported-transfer rejection claim.",
+    "verifier_sha256": "baa737f572f8a40d3ed1173d2d67112c8f106cbab82b1f3fe507305869fc4a96",
+    "call_paths_checked": 5,
+    "paths": [
+      {
+        "candidate_id": 4,
+        "path_instruction_count": 49,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": 4,
+        "path_instruction_count": 54,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": 3,
+        "path_instruction_count": 281,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": "additional-validated-callee",
+        "path_instruction_count": 80,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      },
+      {
+        "candidate_id": "additional-validated-callee",
+        "path_instruction_count": 419,
+        "all_path_edges_independently_checked": true,
+        "actual_execution_proven": false
+      }
+    ],
+    "input_unchanged": true,
+    "conditional_feasibility_evaluated": false,
+    "call_returns_assumed": true,
+    "game_functions_recovered": 0,
+    "original_oracle_tests": 0
+  },
+  "revalidated_callee_two": {
+    "target_sha256": "36ff31682081a61ba564cb5e09cd6240f79791879cf1fbfb8e6252f75faddc6c",
+    "instruction_starts_checked": 167,
+    "supported_edges": 186,
+    "recognized_disallowed_edge_encodings": 0,
+    "opcode_edge_kinds_verified": true,
+    "path_traversal_excludes_call_edges": true,
+    "classifier_uses_complete_instruction_allowlist": false,
+    "classifier_scope": "Enumerated transfer/trap encodings; other LLVM-decoded encodings use ordinary fallback. No universal unsupported-transfer rejection claim.",
+    "verifier_sha256": "baa737f572f8a40d3ed1173d2d67112c8f106cbab82b1f3fe507305869fc4a96",
+    "call_paths_checked": 0,
+    "paths": [],
+    "input_unchanged": true,
+    "conditional_feasibility_evaluated": false,
+    "call_returns_assumed": true,
+    "game_functions_recovered": 0,
+    "original_oracle_tests": 0
+  },
+  "new_test_methods": 3,
+  "new_negative_encoding_cases": 9,
+  "python_tests": 49,
+  "scope": "Enumerated instruction encodings only. Other LLVM-decoded encodings still use ordinary fallback; no complete supported-instruction allowlist or universal unsupported-transfer rejection claim.",
+  "game_executed": false,
+  "game_functions_recovered": 0,
+  "original_oracle_tests": 0,
+  "as_of": "2026-10-19"
+}

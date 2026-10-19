@@ -116,7 +116,17 @@
     "existing_bottle_clone": false,
     "model_download": false,
     "game_execution": false,
-    "instrumentation": false
+    "instrumentation": false,
+    "game_observation_seconds": 120,
+    "shutdown_grace_seconds": 60,
+    "maximum_game_lifetime_seconds": 180,
+    "process_memory_sample_target_seconds": 0.5,
+    "maximum_successful_sample_gap_seconds": 1.0,
+    "native_external_write_growth_included_in_disk_ceiling": true,
+    "watchdog_qualification_required_before_launch": true,
+    "owner_signout_before_launcher_shutdown": true,
+    "narrower_owner_approval_requires_reconciliation": true,
+    "game_seconds_field_means": "observation limit; maximum game lifetime is separately 180 seconds including shutdown grace"
   },
   "runtime_source_files_sha256": {
     "bin/wine": "04da13c940c57919334520f2fee4adb2186edb41904faf8f86647a0a03114953",
